@@ -1,2 +1,3 @@
 # Kitchen Management Tool
- Kitchen Management Tool using E-training for a preparation list
+Dissertation project
+Kitchen Management Tool using E-training for a preparation list
