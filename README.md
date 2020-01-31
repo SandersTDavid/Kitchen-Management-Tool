@@ -1,2 +1,2 @@
 # Kitchen Management Tool
- E-Training for kitchen preparation list 
+ Kitchen Management Tool to using E-training for a preparation list
