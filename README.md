@@ -1,3 +1,3 @@
 # Kitchen Management Tool
-Dissertation project
+Dissertation project: 
 Kitchen Management Tool using E-training for a preparation list
