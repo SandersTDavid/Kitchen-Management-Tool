@@ -10,11 +10,6 @@ h1 {
   padding: 2px;
 }
 
-p2 {
-  font-size: 15px;
-  padding: 2px;
-}
-
 .header {
   padding: 10px;
   text-align: center;
@@ -103,9 +98,9 @@ li a {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-/*Moves content to the center of the Black box*/
+/*Moves content to the center of the Red box*/
 .move-Content {
-  padding: 60px;
+  padding: 45px;
 }
 
 /*Adjusts heading text to the center of the page */
@@ -149,11 +144,11 @@ p1 {
   justify-content: center;
 }
 
-/*Creates and styles the Black box, adds shade/ makes the corners round ect.*/
+/*Creates and styles the Red box, adds shade/ makes the corners round ect.*/
 .BlackBox {
   background: #232020;
   width: 400px;
-  height: 650px;
+  height: 800px;
   border-radius: 40px;
   margin: 0 auto 0 auto;
   padding: 0px 0px 0px 0px;

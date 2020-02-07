@@ -17,7 +17,6 @@ p1{
   padding: 2px;
 }
 .header {
-
   padding: 1px;
   text-align: center;
   background: rgb(240, 120, 0);
@@ -60,6 +59,7 @@ p1{
   background-color: orange;
   box-shadow: 0 0 10px rgba(0.5, 0.5, 0.5, 0.5);
   transition: 0.35s;
+  colour: black;
 }
 .navbar {
   box-shadow: 0 0 10px rgba(0.5, 0.5, 0.5, 0.5);}
@@ -116,7 +116,6 @@ li a:hover {
   grid-template-areas:
     'header header header header header header'
     'menu menu menu menu menu menu'
-    'left left left left left left'
     'main main main main main main'
     'right right right right right right'
     'footer footer footer footer footer footer'

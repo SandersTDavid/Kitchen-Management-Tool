@@ -103,7 +103,25 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 </head>
 
 <body>
-    <div class="wrapper">
+  <div class = "wrapper">
+        <div class="grid-container">
+           <div class="item1">
+             <div class="header">
+               <h1>E-Training with Preparation list</h1>
+             </div>
+           </div>
+
+         <div class="item2">
+           <nav class="navbar">
+             <ul>
+                <li id = "selected"><b><a href="login.php">Login</a></b></li>
+                <li><a href="register.php">Register</a></li>
+                <li><a href="LandingPage.html">Home</a></li>
+            </ul>
+         </nav>
+        </div>
+
+    <div class="item3">
       <div class = 'BlackBox' id ="centre_BlackBox">
       <div class = 'move-Content' id = "move-Content">
         <img src="Media/Logo.jpg" width="350" height="350" class = "img-center">
@@ -123,11 +141,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <div class="form-group" id = "center_buttons">
                 <input type="submit" class="btn btn-primary" value="Login">
             </div>
-            <p>Don't have an account? <a href="landlord-register.php">Sign up now</a>.</p>
-            <p><a href="index.html">Go back</a></p>
+            <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
+            <p><a href="LandingPage.html">Go back</a></p>
         </form>
       </div>
     </div>
     </div>
+    </div>
+  </div>
 </body>
 </html>
