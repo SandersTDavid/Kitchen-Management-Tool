@@ -30,10 +30,10 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
          <div class="item2">
            <nav class="navbar">
              <ul>
-                <li><a href="Components.html">Components</a></li>
-                <li><a href="Preplist.html">Preparation List</a></li>
-                <li id = "selected"><b><a href="">Training</a></b></li>
-                <li><a href="Account.html">Account</a></li>
+                <li><a href="Components.php">Components</a></li>
+                <li><a href="Preplist.php">Preparation List</a></li>
+                <li id = "selected"><b><a href="Training.php">Training</a></b></li>
+                <li><a href="Account.php">Account</a></li>
                 <li id= "bb"><a href="logout.php">Log out</a></li>
             </ul>
          </nav>
