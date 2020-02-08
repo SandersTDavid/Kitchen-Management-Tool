@@ -3,7 +3,7 @@ CREATE TABLE employee (
   employee_fname VARCHAR(35) NOT NULL,
   employee_lname VARCHAR(35) NOT NULL,
   employee_email VARCHAR(255) NOT NULL UNIQUE,
-  employee_password VARCHAR(35) NOT NULL,
+  employee_password VARCHAR(255) NOT NULL,
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 

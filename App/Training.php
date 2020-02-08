@@ -4,7 +4,7 @@ session_start();
 
 // Check if the user is logged in, if not then redirect him to login page
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-  header("location: login.php");//to be changed!!!!!!!
+  header("location: login.php");
   exit;
 }
 ?>
@@ -33,7 +33,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                 <li><a href="Components.html">Components</a></li>
                 <li><a href="Preplist.html">Preparation List</a></li>
                 <li id = "selected"><b><a href="">Training</a></b></li>
-                <li id= "bb"><a href="Account.html">Account</a></li>
+                <li><a href="Account.html">Account</a></li>
+                <li id= "bb"><a href="logout.php">Log out</a></li>
             </ul>
          </nav>
         </div>

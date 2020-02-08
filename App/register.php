@@ -11,10 +11,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     // Validate email
     if(empty(trim($_POST["email"]))){
-        $email_err = "Please enter a email.";
+        $email_err = "Please enter an email.";
     } else{
         // Prepare a select statement
-        $sql = "SELECT employee_id FROM employee WHERE email = ?";
+        $sql = "SELECT employee_id FROM employee WHERE employee_email = ?";
 
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
@@ -67,7 +67,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(empty($email_err) && empty($password_err) && empty($confirm_password_err)){
 
         // Prepare an insert statement
-        $sql = "INSERT INTO employee (fname,lname, email, password) VALUES (?,?, ?, ?)";
+        $sql = "INSERT INTO employee (employee_fname,employee_lname, employee_email, employee_password) VALUES (?,?, ?, ?)";
 
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
