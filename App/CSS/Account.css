@@ -19,15 +19,6 @@ p {
   font-size: 15px;
 }
 
-.form_text {
-  colour: silver;
-  font-size: 10px;
-}
-
-.form_grouo {
-  font-size: 10px;
-}
-
 img {
   padding-top: 98px;
   width: 50px;
@@ -70,7 +61,6 @@ p1 {
   padding: 1px;
   text-align: center;
   color: white;
-  font-size: 5px;
 }
 
 .sixth {
@@ -172,6 +162,14 @@ li a:hover {
   bottom: 0;
 }
 
+.wrapper2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
 /*creates and styles button */
 .button1 {
   background-color: white;
@@ -193,6 +191,12 @@ li a:hover {
 /*Centers the button on the page */
 .form_text {
   colour: silver;
+  font-size: 10px;
+  margin: 0 auto 0 auto;
+  padding: 0px 0px 0px 0px;
+}
+
+.form_group {
   font-size: 10px;
 }
 

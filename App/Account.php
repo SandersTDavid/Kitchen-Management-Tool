@@ -78,7 +78,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   <meta charset="utf-8">
   <title>Account</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+
   <link  rel='stylesheet' href='CSS/Account.css' type='text/css'>
 </head>
 
@@ -115,7 +115,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
          <div class="item5">
          <div class="fifth">
-           <div class="wrapper1">
+
              <div class = 'BlackBox' id ="centre_BlackBox">
              <div class = 'move-Content' id = "move-Content">
 
@@ -138,8 +138,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                </form>
              </div>
            </div>
-           </div>
          </div>
+       </div>
          </div>
          <div class="item6">
            <div class="sixth">

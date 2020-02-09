@@ -8,7 +8,91 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
   header("location: login.php");
   exit;
 }
-?>
+
+$food_name = $food_time = $food_category = "";
+$fname_err = $ftime_err = $fcategory_err = "";
+
+// Processing form data when form is submitted
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+
+  // Validate food name
+if(empty(trim($_POST["food_name"]))){
+    $fname_err = "Please enter a name.";
+} else{
+
+  $sql = "SELECT food_id FROM food WHERE food_name = ?";
+
+  if($stmt = mysqli_prepare($link, $sql)){
+      // Bind variables to the prepared statement as parameters
+      mysqli_stmt_bind_param($stmt, "s", $param_fname);
+
+      // Set parameters
+      $param_fname = trim($_POST["food_name"]);
+
+      // Attempt to execute the prepared statement
+      if(mysqli_stmt_execute($stmt)){
+          /* store result */
+          mysqli_stmt_store_result($stmt);
+
+          if(mysqli_stmt_num_rows($stmt) == 1){
+              $fname_err = "This component already exists";
+          } else{
+              $food_name = trim($_POST["food_name"]);
+              $food_time = trim($_POST["food_time"]);
+              $food_category = trim($_POST["food_category"]);
+          }
+      } else{
+          echo "Oops! Something went wrong. Please try again later.";
+      }
+  }
+
+  // Close statement
+  mysqli_stmt_close($stmt);
+}
+
+
+      if(empty(trim($_POST["food_time"]))){
+          $ftime_err = "Please enter a time in minutes.";
+      } elseif(strlen(trim($_POST["food_time"])) > 4){
+          $ftime_err = "Please enter a suitable time less than 1000 minutes";
+      } else{
+          $food_time = trim($_POST["food_time"]);
+      }
+
+      // Check input errors before inserting in database
+      if(empty($fname_err) && empty($ftime_err) && empty($fcategory_err)){
+
+          // Prepare an insert statement
+          $sql = "INSERT INTO food (food_name, food_category, food_time) VALUES (?, ?, ?)";
+
+          if($stmt = mysqli_prepare($link, $sql)){
+              // Bind variables to the prepared statement as parameters
+              mysqli_stmt_bind_param($stmt, "sss",$param_fname,$param_fcategory, $param_ftime);
+
+              // Set parameters
+              $param_fname = $food_name;
+              $param_fcategory = $food_category;
+              $param_ftime = $food_time;
+
+              // Attempt to execute the prepared statement
+              if(mysqli_stmt_execute($stmt)){
+                  // Redirect to login page
+                //  header("location: login.php");
+                echo "Component added!";
+              } else{
+                  echo "Something went wrong. Please try again later.";
+              }
+          }
+
+          // Close statement
+          mysqli_stmt_close($stmt);
+      }
+
+      // Close connection
+      mysqli_close($link);
+    }
+    ?>
+
 <!DOCTYPE html>
 
 <head>
@@ -17,6 +101,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 <!--  <script src="js/script.js"></script> -->
   <link  rel='stylesheet' href='CSS/Training.css' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
 </head>
 
 <body>
@@ -43,11 +128,39 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         </div>
          <div class="item3">
          <div class="third">
-           <h1>Training tips</h1>
-           <p1>Lorem ipsum dolor sit amet, cu legere possim eloquentiam pro. Autem iudico necessitatibus et per, ex nec aliquid officiis. Usu feugiat similique ei, impetus forensibus eu sea. At sea blandit percipit accusata, brute argumentum signiferumque ea cum. Ex erat causae fabellas usu. Id adhuc perfecto eum, an tantas tractatos tincidunt nam, ea ius mutat complectitur.
-           </p1>
+           <h1>Add Component</h1>
+
+           <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+             <div class="form-group>">
+                 <p1>Component Name</p1>
+                 <input type="text" name="food_name" class="form-control" value="<?php echo $food_name; ?>">
+                 <span class="help-block"><?php echo $fname_err; ?></span>
+             </div>
+
+             <div class="form-group>">
+                   <p> </p>
+                 <p1>Component Category</p1>
+
+                 <input type="text" name="food_category" class="form-control" value="<?php echo $food_category; ?>">
+             </div>
+
+               <div class="form-group <?php echo (!empty($fcategory_err)) ? 'has-error' : ''; ?>">
+                 <p> </p>
+                   <p1>Component Time</p1>
+
+                   <input type="text" name="food_time" class="form-control" value="<?php echo $food_time; ?>">
+                   <span class="help-block"><?php echo $ftime_err; ?></span>
+               </div>
+
+               <div class="form-group" id = "center_buttons">
+                   <input type="submit" class="btn btn-primary" value="Add", "reset">
+
+               </div>
+           </form>
+
          </div>
          </div>
+
          <div class="item4">
            <video width="220" height="240" autoplay>
              <source src="movie.mp4" type="video/mp4">
