@@ -132,12 +132,13 @@ if(empty(trim($_POST["food_name"]))){
         </div>
          <div class="item3">
          <div class="third">
-           <h1>Add Component</h1>
+           <h2>Add Component</h2>
 
            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
              <div class="componentBox">
                  <p1>Component Name</p1>
-                 <input type="text" name="food_name" class="form-control" value="<?php echo $food_name; ?>">
+               </br>
+                 <input type="text" name="food_name" id="textbox" value="<?php echo $food_name; ?>">
                  <span class="help-block"><?php echo $fname_err; ?></span>
              </div>
 
@@ -164,12 +165,13 @@ if(empty(trim($_POST["food_name"]))){
                        value="Other"><label for="radioOther">OTHER</label>
                    </div>
              </div>
-
+</br>
                <div class="componentBox <?php echo (!empty($fcategory_err)) ? 'has-error' : ''; ?>">
-                 <p> </p>
+
+                 </br>
                    <p1>Component Time</p1>
 
-                   <input type="text" name="food_time" class="form-control" value="<?php echo $food_time; ?>">
+                   <input type="text" name="food_time" id="textbox" value="<?php echo $food_time; ?>">
                    <span class="help-block"><?php echo $ftime_err; ?></span>
                </div>
 
@@ -194,7 +196,7 @@ if(empty(trim($_POST["food_name"]))){
                  </thead>
                  <tbody>
       <?php
-            $sql = "SELECT food_name, food_category, food_time FROM food";
+            $sql = "SELECT food_name, food_category, food_time FROM food ORDER BY food_name asc";
               $result = $link->query($sql);
 
                if ($result->num_rows > 0) {
@@ -207,6 +209,7 @@ if(empty(trim($_POST["food_name"]))){
                    echo "<tr><td>" . $fname_err . "</td><td>" . $fcategory_err ."</td><td>" . $ftime_err . "</td></td>";
             }
 
+      
        ?>
 
      </tbody>
