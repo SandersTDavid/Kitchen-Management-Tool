@@ -95,8 +95,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
          <div class="item2">
            <nav class="navbar">
              <ul>
-                <li><a href="Components.html">Components</a></li>
-                <li><a href="Preplist.html">Preparation List</a></li>
+                <li><a href="Components.php">Components</a></li>
+                <li><a href="Preplist.php">Preparation List</a></li>
                 <li><a href="Training.php">Training</a></li>
                 <li id="selected"><b><a href="Account.php">Account</a></b></li>
                 <li id= "bb"><a href="logout.php">Log out</a></li>

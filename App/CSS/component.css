@@ -1,0 +1,277 @@
+body {
+  font-size: 13px;
+  background-image: url("Background.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+h1 {
+  font-size: 26px;
+  padding: 2px;
+}
+
+p1 {
+  font-size: 15px;
+  padding: 2px;
+}
+
+.header {
+  padding: 1px;
+  text-align: center;
+  background: rgb(240, 120, 0);
+  color: black;
+  font-size: 30px;
+}
+
+.third {
+  text-align: center;
+  color: white;
+  font-size: 10px;
+  background: #232020;
+  margin: auto;
+  border-radius: 40px;
+  width: 550px;
+  height: 420px;
+  padding: 50px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 10), 0 6px 20px 0 rgba(0, 0, 0, 18);
+}
+
+.fourth {
+  padding: 1px;
+  background: white;
+  color: black;
+  font-size: 10px;
+  margin: auto;
+}
+
+.fifth {
+  padding: 1px;
+  text-align: center;
+  background: black;
+  color: white;
+  font-size: 10px;
+}
+
+.sixth {
+  padding: 1px;
+  text-align: center;
+  background: orange;
+  color: Black;
+  font-size: 10px;
+}
+
+.navbar a:hover {
+  background-color: orange;
+  box-shadow: 0 0 10px rgba(0.5, 0.5, 0.5, 0.5);
+  transition: 0.35s;
+}
+
+.navbar {
+  box-shadow: 0 0 10px rgba(0.5, 0.5, 0.5, 0.5);
+}
+
+#selected a {
+  background-color: black;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  opacity: 0.95;
+  font-size: 15px;
+}
+
+li a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+#bb {
+  display: block;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  float: right;
+  background-color: #1f1f1f;
+  cursor: pointer;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+.item1 {
+  grid-area: header;
+}
+
+.item2 {
+  grid-area: menu;
+  z-index: 9999;
+}
+
+.item3 {
+  grid-area: left;
+}
+
+.item4 {
+  grid-area: main;
+  background-size: cover;
+  background-color: white;
+}
+
+.item5 {
+  grid-area: footer;
+}
+
+.item6 {
+  grid-area: right;
+}
+
+.item7 {
+  grid-area: right;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'menu menu menu menu menu menu'
+    'left left left left left left'
+    'main main main main main main'
+    'right right right right right right'
+    'footer footer footer footer footer footer'
+    'logo logo logo logo logo logo';
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+img {
+  padding-top: 98px;
+  width: 200px;
+  height: 200px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* entire box */
+.selectoption {
+  width: auto;
+  background-color: none;
+}
+
+/* box inside selectoption */
+.setRadio {
+  display: inline-block;
+  font-size: 14px;
+  width: auto;
+  background-color: none;
+}
+
+.setRadio input[type="radio"] {
+  width: 0px;
+  height: 0px;
+  opacity: 0;
+  background-color: none;
+  position: fixed;
+  width: 0;
+  display: inline-flex;
+}
+
+.setRadio label {
+  display: inline-flex;
+  background-color: orange;
+  padding: 10px 20px;
+  font-family: sans-serif, Arial;
+  font-size: 16px;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+}
+
+.setRadio input[type="radio"]:checked+label {
+  background-color: black;
+  border-color: orange;
+  border: 2px orange;
+  color: white;
+}
+
+.setRadio input[type="radio"]:focus+label {
+  border: 2px orange;
+}
+
+.setRadio label:hover {
+  background-color: orange;
+}
+
+.componentBox {
+  width: 300px;
+  margin: auto;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+}
+
+td, thead {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  width: 150px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#myBtn {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Fixed/sticky position */
+  bottom: 20px;
+  /* Place the button at the bottom of the page */
+  right: 30px;
+  /* Place the button 30px from the right */
+  z-index: 99;
+  /* Make sure it does not overlap */
+  border: none;
+  /* Remove borders */
+  outline: none;
+  /* Remove outline */
+  background-color: black;
+  /* Set a background color */
+  color: white;
+  /* Text color */
+  cursor: pointer;
+  /* Add a mouse pointer on hover */
+  padding: 15px;
+  /* Some padding */
+  border-radius: 10px;
+  /* Rounded corners */
+  font-size: 18px;
+  /* Increase font size */
+}
+
+#myBtn:hover {
+  background-color: #555;
+  /* Add a dark-grey background on hover */
+}

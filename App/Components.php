@@ -9,8 +9,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
   exit;
 }
 
-$food_name = $food_time = $food_category = "";
-$fname_err = $ftime_err = $fcategory_err = "";
+$food_name = $food_time = $food_category = $row = "";
+$fname_err = $ftime_err = $fcategory_err = $result = "";
 
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -42,14 +42,8 @@ if(empty(trim($_POST["food_name"]))){
               $food_category = trim($_POST["food_category"]);
           }
       } else{
-          echo "Oops! Something went wrong. Please try again later.";
+          echo "Oops! Something went wrong. Please refresh page.";
       }
-  }
-
-  // Close statement
-  mysqli_stmt_close($stmt);
-}
-
 
       if(empty(trim($_POST["food_time"]))){
           $ftime_err = "Please enter a time in minutes.";
@@ -58,6 +52,18 @@ if(empty(trim($_POST["food_name"]))){
       } else{
           $food_time = trim($_POST["food_time"]);
       }
+
+      if (empty(trim($_POST["food_category"]))) {
+        $fcategory_errErr = "Please select a category";
+      } else {
+          $food_category = trim($_POST["food_category"]);
+      }
+    }
+
+    // Close statement
+    mysqli_stmt_close($stmt);
+  }
+
 
       // Check input errors before inserting in database
       if(empty($fname_err) && empty($ftime_err) && empty($fcategory_err)){
@@ -76,11 +82,9 @@ if(empty(trim($_POST["food_name"]))){
 
               // Attempt to execute the prepared statement
               if(mysqli_stmt_execute($stmt)){
-                  // Redirect to login page
-                //  header("location: login.php");
                 echo "Component added!";
               } else{
-                  echo "Something went wrong. Please try again later.";
+                  echo "Something went wrong. Please refresh page.";
               }
           }
 
@@ -88,9 +92,9 @@ if(empty(trim($_POST["food_name"]))){
           mysqli_stmt_close($stmt);
       }
 
-      // Close connection
-      mysqli_close($link);
-    }
+  // Close statement
+ mysqli_stmt_close($stmt);
+}
     ?>
 
 <!DOCTYPE html>
@@ -100,7 +104,7 @@ if(empty(trim($_POST["food_name"]))){
   <title>Components</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 <!--  <script src="js/script.js"></script> -->
-  <link  rel='stylesheet' href='CSS/Training.css' type='text/css'>
+  <link  rel='stylesheet' href='CSS/component.css' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
 </head>
 
@@ -131,20 +135,37 @@ if(empty(trim($_POST["food_name"]))){
            <h1>Add Component</h1>
 
            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-             <div class="form-group>">
+             <div class="componentBox">
                  <p1>Component Name</p1>
                  <input type="text" name="food_name" class="form-control" value="<?php echo $food_name; ?>">
                  <span class="help-block"><?php echo $fname_err; ?></span>
              </div>
 
-             <div class="form-group>">
+             <div class="selectoption">
                    <p> </p>
                  <p1>Component Category</p1>
+               </br>
+               <div class="setRadio">
 
-                 <input type="text" name="food_category" class="form-control" value="<?php echo $food_category; ?>">
+                 <input type="radio" id="radioCook"name="food_category"
+                   <?php if(isset($food_category))  echo "checked"; ?>
+                    value="Cook" label="COOK"><label for="radioCook">COOK</label>
+
+                    <input type="radio" id="radioFreeze" name="food_category"
+                    <?php if(isset($food_category))  echo "checked"; ?>
+                     value="Freeze" label=FREEZE><label for="radioFreeze">FREEZE</label>
+
+                     <input type="radio" id="radioPrepare" name="food_category"
+                     <?php if(isset($food_category)) echo "checked"; ?>
+                      value="Prepare" label= "PREPARE"><label for="radioPrepare">PREPARE</label>
+
+                      <input type="radio" id="radioOther" name="food_category"
+                      <?php if(isset($food_category)) echo "checked"; ?>
+                       value="Other"><label for="radioOther">OTHER</label>
+                   </div>
              </div>
 
-               <div class="form-group <?php echo (!empty($fcategory_err)) ? 'has-error' : ''; ?>">
+               <div class="componentBox <?php echo (!empty($fcategory_err)) ? 'has-error' : ''; ?>">
                  <p> </p>
                    <p1>Component Time</p1>
 
@@ -162,12 +183,37 @@ if(empty(trim($_POST["food_name"]))){
          </div>
 
          <div class="item4">
-           <video width="220" height="240" autoplay>
-             <source src="movie.mp4" type="video/mp4">
-             <source src="movie.ogg" type="video/ogg">
-           Your browser does not support the video tag.
-           </video>
+           <div class="fourth">
+          <table>
+            <thead>
+                   <tr>
+                       <th>Component</th>
+                       <th>Category</th>
+                       <th>Time</th>
+                   </tr>
+                 </thead>
+                 <tbody>
+      <?php
+            $sql = "SELECT food_name, food_category, food_time FROM food";
+              $result = $link->query($sql);
+
+               if ($result->num_rows > 0) {
+
+               while($row = $result->fetch_assoc()) {
+                echo "<tr><td>" . $row["food_name"] . "</td><td>" . $row["food_category"] . "</td><td>" . $row["food_time"]."</td></td>" ;
+               }
+            }
+              else {
+                   echo "<tr><td>" . $fname_err . "</td><td>" . $fcategory_err ."</td><td>" . $ftime_err . "</td></td>";
+            }
+
+       ?>
+
+     </tbody>
+          </table>
+
          </div>
+       </div>
          <div class="item5">
          <div class="fifth">
            <h1>Training advice</h1>
@@ -212,6 +258,16 @@ function scrollFunction() {
 function topFunction() {
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+
+function radio_toolbar_click (ev) {
+  let checked=document.querySelector('input[name="radio"]:checked');
+
+  if(checked) {
+    checked.checked=false;
+  }
+
+  ev.target.previousElementSibling.checked=true;
 }
 </script>
 </footer>
