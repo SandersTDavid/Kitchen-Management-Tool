@@ -92,6 +92,13 @@ if(empty(trim($_POST["food_name"]))){
           mysqli_stmt_close($stmt);
       }
 
+      if(empty($fname_err) && empty($ftime_err) && empty($fcategory_err)){
+
+
+
+      mysqli_stmt_close($stmt);
+  }
+
   // Close statement
  mysqli_stmt_close($stmt);
 }
@@ -202,14 +209,13 @@ if(empty(trim($_POST["food_name"]))){
                if ($result->num_rows > 0) {
 
                while($row = $result->fetch_assoc()) {
-                echo "<tr><td>" . $row["food_name"] . "</td><td>" . $row["food_category"] . "</td><td>" . $row["food_time"]."</td></td>" ;
+                echo "<tr ><td>" . $row["food_name"] . "</td><td>" . $row["food_category"] . "</td><td>" . $row["food_time"]."</td></td>" ;
                }
             }
               else {
                    echo "<tr><td>" . $fname_err . "</td><td>" . $fcategory_err ."</td><td>" . $ftime_err . "</td></td>";
             }
 
-      
        ?>
 
      </tbody>
@@ -243,25 +249,9 @@ if(empty(trim($_POST["food_name"]))){
 
 <footer>
   <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+  <script src="JS/pageup.js"></script>
 <script>
-mybutton = document.getElementById("myBtn");
 
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
-}
-
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-  document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-}
 
 function radio_toolbar_click (ev) {
   let checked=document.querySelector('input[name="radio"]:checked');

@@ -34,9 +34,9 @@ p1 {
 .fourth {
   padding: 1px;
   text-align: center;
-  background: black;
-  color: white;
+  background: white;
   font-size: 10px;
+  height: auto;
 }
 
 .fifth {
@@ -55,7 +55,7 @@ p1 {
   font-size: 10px;
 }
 
-.navbar a:hover {
+.navbar :hover {
   background-color: orange;
   box-shadow: 0 0 10px rgba(0.5, 0.5, 0.5, 0.5);
   transition: 0.35s;
@@ -65,11 +65,11 @@ p1 {
   box-shadow: 0 0 10px rgba(0.5, 0.5, 0.5, 0.5);
 }
 
-#selected a {
+#selected {
   background-color: black;
 }
 
-ul {
+.navbar  {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -79,7 +79,7 @@ ul {
   font-size: 15px;
 }
 
-li a {
+.navbar a {
   float: left;
   display: block;
   color: white;
@@ -98,10 +98,6 @@ li a {
   cursor: pointer;
 }
 
-li a:hover {
-  background-color: #111;
-}
-
 .item1 {
   grid-area: header;
 }
@@ -118,6 +114,7 @@ li a:hover {
 .item4 {
   grid-area: main;
   background-size: cover;
+  height: auto;
 }
 
 .item5 {
@@ -196,4 +193,26 @@ img {
 #myBtn:hover {
   background-color: #555;
   /* Add a dark-grey background on hover */
+}
+
+.title {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 120px;
+  color: #eee;
+  text-align: left;
+  text-shadow: 1px 1px 0 black;
+}
+
+.title2 {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 370px;
+  color: #eee;
+  text-align: right;
+  text-shadow: 1px 1px 0 black;
+}
+
+.items {
+  padding: 21px;
 }

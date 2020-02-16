@@ -23,7 +23,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
       <div class="grid-container">
          <div class="item1">
            <div class="header">
-             <h1>E-Training with Preparation list</h1>
+             <h1>E-TrainHing with Preparation list</h1>
              <p1>Section: Larder</p1>
            </div>
          </div>
@@ -78,26 +78,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
 <footer>
   <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-<script>
-mybutton = document.getElementById("myBtn");
+  <script src="JS/pageup.js"></script>
 
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
-}
-
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-  document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-}
-</script>
 </footer>
 
 </html>

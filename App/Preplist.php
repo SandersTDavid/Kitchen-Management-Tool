@@ -18,8 +18,11 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
   <title>Preparation list</title>
     <script src="jS/script.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-<!--  <script src="js/script.js"></script> -->
   <link  rel='stylesheet' href='CSS/Preplist.css' type='text/css'>
+    <link  rel='stylesheet' href='CSS/prep.css' type='text/css'>
+        <link  rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' type='text/css'>
+
+
 </head>
 
 <body>
@@ -33,23 +36,28 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
          </div>
          <div class="item2">
            <nav class="navbar">
-             <ul>
-                <li><a href="Components.php">Components</a></li>
-                <li id = "selected"><b><a href="Preplist.php">Preparation List</a></b></li>
-                <li><a href="Training.php">Training</a></li>
-                <li><a href="Account.php">Account</a></li>
-                <li id= "bb"><a href="logout.php">Log out</a></li>
-            </ul>
+                <a href="Components.php">Components</a>
+                <b><a href="Preplist.php" id = "selected">Preparation List</a></b>
+                <a href="Training.php">Training</a>
+                <a href="Account.php">Account</a>
+                <a href="logout.php" id= "bb">Log out</a>
          </nav>
         </div>
 
          <div class="item4">
-           <video width="220" height="240" autoplay>
-             <source src="movie.mp4" type="video/mp4">
-             <source src="movie.ogg" type="video/ogg">
-           Your browser does not support the video tag.
-           </video>
+           <div class="fourth">
+             <h3>Preparation List</h3>
+             <div class="adder">
+               <input type="text" class="input" placeholder="Add items in your list"/>
+               <span class="add">+</span>
+             </div>
+             <ul>
+               <li class="draggable" draggable="true">Food goes here</li>
+              <li class="draggable" draggable="true">Sauce</li>
+             </ul>
          </div>
+  <script src="JS/Preplist.js"></script>
+       </div>
          <div class="item5">
          <div class="fifth">
            <h1>Training advice</h1>
@@ -76,26 +84,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
 <footer>
   <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-  <script>
-  mybutton = document.getElementById("myBtn");
-
-  // When the user scrolls down 20px from the top of the document, show the button
-  window.onscroll = function() {scrollFunction()};
-
-  function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-      mybutton.style.display = "block";
-    } else {
-      mybutton.style.display = "none";
-    }
-  }
-
-  // When the user clicks on the button, scroll to the top of the document
-  function topFunction() {
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-  }
-  </script>
+  <script src="JS/pageup.js"></script>
 
 </footer>
 
