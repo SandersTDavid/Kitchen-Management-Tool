@@ -1,0 +1,14 @@
+a:hover {
+   cursor: pointer;
+   color: darkorange;
+}
+ul {
+  list-style-type: none;
+  overflow: hidden;
+}
+li{
+  padding: 14px 16px;
+  text-decoration: none;
+  background-color: white;
+  color: black;
+}
