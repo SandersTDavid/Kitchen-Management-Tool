@@ -57,16 +57,13 @@
    li {
       height: 20px;
       list-style-type: none;
-      margin: 10px;
-      background-color: white;
+      background-color: black;
       color: darkorange;
-      width: 250px;
-      line-height: 2.4;
-      padding-left: 10px;
+      width: 300px;
       cursor: grab;
       transition: all 200ms;
       user-select: none;
-      margin: 10px auto;
+      margin: 1px auto;
       position: relative;
       white-space: nowrap;
       font-size: 15px;
