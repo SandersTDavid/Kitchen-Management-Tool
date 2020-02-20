@@ -20,8 +20,8 @@
     .input {
       outline: none;
       border: 1px solid white;
-      background-color: $blue;
-      color: orange;
+      background-color: white;
+      color: black;
       height: 50px;
       width: 250px;
       padding-left: 10px;
@@ -57,8 +57,8 @@
    li {
       height: 20px;
       list-style-type: none;
-      background-color: black;
-      color: darkorange;
+      background-color: white;
+      color: black;
       width: 300px;
       cursor: grab;
       transition: all 200ms;

@@ -4,7 +4,7 @@ include "config.php";
 
 if (isset($_POST['search'])) {
    $Name = $_POST['search'];
-   $Query = "SELECT food_name FROM food WHERE food_name LIKE '%$Name%' ";
+   $Query = "SELECT * FROM food WHERE food_name LIKE '%$Name%' ";
    $ExecQuery = MySQLi_query($link, $Query);
    echo '
 <ul>
