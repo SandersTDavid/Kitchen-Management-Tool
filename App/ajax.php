@@ -4,7 +4,7 @@ include "config.php";
 
 if (isset($_POST['search'])) {
    $Name = $_POST['search'];
-   $Query = "SELECT * FROM food WHERE food_name LIKE '%$Name%' ";
+   $Query = "SELECT food_name, food_category, food_time FROM food WHERE food_name LIKE '%$Name%' ";
    $ExecQuery = MySQLi_query($link, $Query);
    echo '
 <ul>
@@ -14,6 +14,7 @@ if (isset($_POST['search'])) {
    <li onclick='fill("<?php echo $Result['food_name']; ?>")'>
    <a>
        <?php echo $Result['food_name']; ?>
+
    </li></a>
    <?php
 }}

@@ -54,20 +54,41 @@ var listItens = document.querySelectorAll('.draggable');
   addEventsDragAndDrop(item);
 });
 
-function addNewItem() {
-  var newItem = document.querySelector('.input').value;
+
+ function addRow(mytable) {
+ var newItem = document.createTextNode(document.querySelector('.input').value);
+ var category = document.createTextNode("Cook");
+ var time = document.createTextNode("time");
+ document.querySelector('.input').value = '';
+  // Get a reference to the table
   if (newItem != '') {
-    document.querySelector('.input').value = '';
-    var li = document.createElement('li');
-    var attr = document.createAttribute('draggable');
-    var ul = document.querySelector('ul');
-    li.className = 'draggable';
-    attr.value = 'true';
-    li.setAttributeNode(attr);
-    li.appendChild(document.createTextNode(newItem));
-    ul.appendChild(li);
-    addEventsDragAndDrop(li);
+  var tableRef = document.getElementById(mytable);
+  var attr = document.createAttribute('draggable');
+  attr.value = 'true';
+  // Insert a row at the end of the table
+  var newRow = tableRef.insertRow(-1);
+  newRow.setAttributeNode(attr);
+  newRow.className = 'draggable';
+
+  // Insert a cell in the row at index 0
+  var newCell = newRow.insertCell(0);
+  var newCell2 = newRow.insertCell(1);
+  var newCell3 = newRow.insertCell(2);
+
+   var newText = newItem;
+   var newText2 = category;
+   var newText3 = time;
+
+  newCell.appendChild(newItem);
+  newCell2.appendChild(newText2);
+  newCell3.appendChild(newText3);
+  addEventsDragAndDrop(newRow);
+   }
+   //not working for some reason
+  else {
+    document.getElementById("msg").innerHTML = "Please enter a name";
   }
 }
 
-btn.addEventListener('click', addNewItem);
+
+  document.getElementById('btn').addEventListener('click', function(){addRow('mytable');});

@@ -52,22 +52,11 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
          <div class="item4">
            <div class="fourth">
              <h3>Preparation List</h3>
-             <table id="mytable">
-               <tr>
-                 <th>Component</th>
-                 <th>Category</th>
-                 <th>Time</th>
-               </tr>
-               <tr class="draggable" id="draggable" draggable="true">
-               <td>Food goes here</td>
-               <td>Cook</td>
-               <td>10</td>
-             </tr>
-             <div id="addRow"></div>
-            </table>
-
+             <ul>
+               <li class="draggable" id="draggable" draggable="true">Food goes here</li>
+              <li class="draggable"id="draggable" draggable="true">Sauce</li>
+             </ul>
          </div>
-
        </div>
 
          <div class="item5">
@@ -77,8 +66,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
              <div class="search-box">
              <input type="text" id="search" class="input" autocomplete="off" placeholder="Add items in your list..">
              <div id="display"></div>
-             <span id='btn' class="add">+</span>
-             <span id="msg"></span>
+             <span class="add">+</span>
+
            </div>
          </div>
          </div>

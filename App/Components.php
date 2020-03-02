@@ -46,9 +46,9 @@ if(empty(trim($_POST["food_name"]))){
       }
 
       if(empty(trim($_POST["food_time"]))){
-          $ftime_err = "Please enter a time in minutes.";
-      } elseif(strlen(trim($_POST["food_time"])) > 4){
-          $ftime_err = "Please enter a suitable time less than 1000 minutes";
+          $ftime_err = "Please enter a time in hours and minutes.";
+      } elseif(strlen(trim($_POST["food_time"])) > 5){
+          $ftime_err = "Please enter a suitable time less than 60 hours";
       } else{
           $food_time = trim($_POST["food_time"]);
       }
@@ -176,14 +176,14 @@ if(empty(trim($_POST["food_name"]))){
                <div class="componentBox <?php echo (!empty($fcategory_err)) ? 'has-error' : ''; ?>">
 
                  </br>
-                   <p1>Component Time</p1>
-
-                   <input type="text" name="food_time" id="textbox" value="<?php echo $food_time; ?>">
+                   <p1>Component Time (Mins)</p1>
+                 </br>
+                   <input type="number" name="food_time" id="textbox" min="1" value="<?php echo $food_time; ?>">
                    <span class="help-block"><?php echo $ftime_err; ?></span>
                </div>
 
                <div class="form-group" id = "center_buttons">
-                   <input type="submit" class="btn btn-primary" value="Add", "reset">
+                   <input type="submit" class="btn btn-primary" value="Add">
 
                </div>
            </form>
@@ -262,6 +262,7 @@ function radio_toolbar_click (ev) {
 
   ev.target.previousElementSibling.checked=true;
 }
+
 </script>
 </footer>
 

@@ -3,6 +3,7 @@ function fill(Value) {
    $('#search').val(Value);
    $('#display').hide();
 }
+
 $(document).ready(function() {
    $("#search").keyup(function() {
        var food_name = $('#search').val();
