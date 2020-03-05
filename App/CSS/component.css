@@ -36,8 +36,8 @@ p1 {
   margin: auto;
   margin-bottom: 20px;
   border-radius: 40px;
-  width: 275px;
-  height: 410px;
+  width: 500px;
+  height: 265px;
   padding: 12px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 10), 0 6px 20px 0 rgba(0, 0, 0, 18);
 }
@@ -187,12 +187,44 @@ img {
   padding: 6px 12px;
   font-size: 14px;
 }
+ .container {
+  width: auto;
+  margin: auto;
+  height: auto;
+}
 
+.A {
+  text-align: center;
+  float: left;
+  white-space: wrap;
+  margin-right: 200px;
+  margin-left: 10px;
+}
+
+.B {
+  margin-top: -75px;
+  text-align: center;
+  float: right;
+  white-space: wrap;
+  margin-right: 200px:
+
+}
+
+.C {
+  float: left;
+  text-align: center;
+  margin-left: 10px;
+}
+
+.D {
+float: right;
+margin-top: 55px;
+margin-right: 100px;
+}
 /* entire box */
 .selectoption {
-  width: auto;
   background-color: none;
-  margin: auto;
+  text-align: center;
 }
 
 /* box inside selectoption */
@@ -226,6 +258,8 @@ img {
   border-radius: 4px;
   color: white;
   cursor: pointer;
+  height: auto;
+  width: auto;
 }
 
 .setRadio input[type="radio"]:checked+label {
@@ -244,7 +278,6 @@ img {
 }
 
 .componentBox {
-  margin: 15px auto;
   padding: 1px;
 }
 

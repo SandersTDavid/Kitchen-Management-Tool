@@ -46,12 +46,10 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
          </div>
          </div>
          <div class="item4">
-           <video width="220" height="240" autoplay>
-             <source src="movie.mp4" type="video/mp4">
-             <source src="movie.ogg" type="video/ogg">
-           Your browser does not support the video tag.
-           </video>
+           <div class="fourth">
+             <img src="Media/grapefruit.jpg" alt="grapefruit">
          </div>
+       </div>
          <div class="item5">
          <div class="fifth">
            <h1>Training advice</h1>

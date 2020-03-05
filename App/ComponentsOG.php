@@ -143,19 +143,13 @@ if(empty(trim($_POST["food_name"]))){
            <h2>Add Component</h2>
 
            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-
-            <div ="container">
-
-              <div class="A">
              <div class="componentBox">
                  <p1>Component Name</p1>
                </br>
                  <input type="text" name="food_name" id="textbox" name="textbox" value="<?php echo $food_name; ?>">
                  <span class="help-block"><?php echo $fname_err; ?></span>
              </div>
-            </div>
 
-            <div class="B">
              <div class="selectoption">
                    <p> </p>
                  <p1>Component Category</p1>
@@ -178,12 +172,8 @@ if(empty(trim($_POST["food_name"]))){
                       <?php if(isset($food_category)) echo "checked"; ?>
                        value="Other"><label for="radioOther">OTHER</label>
                    </div>
-                </div>
-           </div>
-
+             </div>
 </br>
-
-               <div class ="C">
                <div class="componentBox <?php echo (!empty($fcategory_err)) ? 'has-error' : ''; ?>">
 
                  </br>
@@ -192,15 +182,11 @@ if(empty(trim($_POST["food_name"]))){
                    <input type="number" name="food_time" id="textbox" min="1" value="<?php echo $food_time; ?>">
                    <span class="help-block"><?php echo $ftime_err; ?></span>
                </div>
-             </div>
 
-            
-               <div class="D">
-                <div class="form-group" id = "center_buttons">
+               <div class="form-group" id = "center_buttons">
                    <input type="submit" class="btn btn-primary" value="Add">
+
                </div>
-             </div>
-           </div>
            </form>
 
          </div>

@@ -52,20 +52,16 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
          <div class="item4">
            <div class="fourth">
              <h3>Preparation List</h3>
+             
+                <button type="button" id='sort' class="sort">Sort</button>
              <table id="mytable">
                <tr>
                  <th>Component</th>
                  <th>Category</th>
                  <th>Time</th>
                </tr>
-               <tr class="draggable" id="draggable" draggable="true">
-               <td>Food goes here</td>
-               <td>Cook</td>
-               <td>10</td>
-             </tr>
              <div id="addRow"></div>
             </table>
-
          </div>
 
        </div>
@@ -74,13 +70,17 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
          <div class="fifth">
            <h3>Search Components</h3>
            <div class="adder">
-             <div class="search-box">
-             <input type="text" id="search" class="input" autocomplete="off" placeholder="Add items in your list..">
+             <input type="text" id="search" class="input" autofocus autocomplete="off" placeholder="Add items in your list..">
              <div id="display"></div>
-             <span id='btn' class="add">+</span>
-             <span id="msg"></span>
+             <span id='btn' class="add" onclick="clearText()">+</span>
+
+
+           <input type"text" class="input2" id="search2" autocomplete="off" disabled>
+           <div id="display2"></div>
+            <input type"text" class="input3" id="search3" autocomplete="off" disabled>
+            <div id="display3"></div>
+
            </div>
-         </div>
          </div>
       </div>
 
@@ -104,6 +104,14 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
   <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
   <script src="JS/pageup.js"></script>
   <script src="JS/Preplist.js"></script>
+  <script>
+function clearText() {
+  document.getElementById("search").reset();
+    document.getElementById("search2").reset();
+    document.getElementById("search3").reset();
+}
+
+</script>
 </footer>
 
 </html>

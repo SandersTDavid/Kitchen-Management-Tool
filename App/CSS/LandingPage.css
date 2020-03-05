@@ -34,9 +34,7 @@ p1 {
 .fourth {
   padding: 1px;
   text-align: center;
-  background: black;
-  color: white;
-  font-size: 10px;
+
 }
 
 .fifth {
@@ -68,6 +66,11 @@ p1 {
 
 #selected a {
   background-color: black;
+}
+
+#gordon {
+max-width: 100%;
+max-height: 100%;
 }
 
 ul {
@@ -118,7 +121,7 @@ li a:hover {
 
 .item4 {
   grid-area: main;
-  background-size: cover;
+  
 }
 
 .item5 {

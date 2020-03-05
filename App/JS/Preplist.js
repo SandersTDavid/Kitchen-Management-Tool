@@ -33,8 +33,8 @@ function dragDrop(e) {
 }
 
 function dragEnd(e) {
-  var listItens = document.querySelectorAll('.draggable');
-  [].forEach.call(listItens, function(item) {
+  var listItems = document.querySelectorAll('.draggable');
+  [].forEach.call(listItems, function(item) {
     item.classList.remove('over');
   });
   this.style.opacity = '1';
@@ -49,19 +49,21 @@ function addEventsDragAndDrop(el) {
   el.addEventListener('dragend', dragEnd, false);
 }
 
-var listItens = document.querySelectorAll('.draggable');
-[].forEach.call(listItens, function(item) {
+var listItems = document.querySelectorAll('.draggable');
+[].forEach.call(listItems, function(item) {
   addEventsDragAndDrop(item);
 });
 
 
  function addRow(mytable) {
- var newItem = document.createTextNode(document.querySelector('.input').value);
- var category = document.createTextNode("Cook");
- var time = document.createTextNode("time");
+ var food = document.createTextNode(document.querySelector('.input').value);
+ var category = document.createTextNode(document.querySelector('.input2').value);
+ var time = document.createTextNode(document.querySelector('.input3').value);
  document.querySelector('.input').value = '';
+  document.querySelector('.input2').value = '';
+   document.querySelector('.input3').value = '';
   // Get a reference to the table
-  if (newItem != '') {
+  if (food != '') {
   var tableRef = document.getElementById(mytable);
   var attr = document.createAttribute('draggable');
   attr.value = 'true';
@@ -75,11 +77,11 @@ var listItens = document.querySelectorAll('.draggable');
   var newCell2 = newRow.insertCell(1);
   var newCell3 = newRow.insertCell(2);
 
-   var newText = newItem;
+   var newText = food;
    var newText2 = category;
    var newText3 = time;
 
-  newCell.appendChild(newItem);
+  newCell.appendChild(food);
   newCell2.appendChild(newText2);
   newCell3.appendChild(newText3);
   addEventsDragAndDrop(newRow);
