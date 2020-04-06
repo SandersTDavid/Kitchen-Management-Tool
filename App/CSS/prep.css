@@ -78,9 +78,6 @@
        width: auto;
        height:auto;
        margin-bottom: 40px;
-       /*   columns: 2;
-  -webkit-columns: 2;
-  -moz-columns: 2; */
 
   }
    li {
@@ -153,6 +150,39 @@ th {
   width: 150px;
 }
 
+#horizontal {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+#time {
+  width: 30%;
+  text-align: center;
+}
+#saveTime {
+  width: 45%;
+  text-align: center;
+}
+#sort {
+  width: 25%;
+  background-color: black;
+  color: white;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0.5, 0.5, 0.5, 0.5);
+  border: 1px black;
+  height:25px;
+}
+#ovenpace {
+  width: 30%;
+  text-align: center;
+}
+#sort:hover{
+  background-color: orange;
+}
+
+#sort:focus {
+  outline:0;
+}
 
 tbody {
   font-size: 12px;

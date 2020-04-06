@@ -68,7 +68,7 @@ p1 {
   font-size: 10px;
 }
 
-.navbar a:hover {
+.navbar :hover {
   background-color: orange;
   box-shadow: 0 0 10px rgba(0.5, 0.5, 0.5, 0.5);
   transition: 0.35s;
@@ -78,11 +78,11 @@ p1 {
   box-shadow: 0 0 10px rgba(0.5, 0.5, 0.5, 0.5);
 }
 
-#selected a {
+#selected {
   background-color: black;
 }
 
-ul {
+.navbar  {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -92,7 +92,7 @@ ul {
   font-size: 15px;
 }
 
-li a {
+.navbar a {
   float: left;
   display: block;
   color: white;
@@ -111,9 +111,6 @@ li a {
   cursor: pointer;
 }
 
-li a:hover {
-  background-color: #111;
-}
 
 .item1 {
   grid-area: header;
@@ -305,41 +302,22 @@ tbody {
   font-size: 12px;
 }
 
-#delete {
-  display: inline-block;
-  float: right;
-}
-
 #myBtn {
   display: none;
-  /* Hidden by default */
   position: fixed;
-  /* Fixed/sticky position */
   bottom: 20px;
-  /* Place the button at the bottom of the page */
   right: 30px;
-  /* Place the button 30px from the right */
   z-index: 99;
-  /* Make sure it does not overlap */
   border: none;
-  /* Remove borders */
   outline: none;
-  /* Remove outline */
   background-color: black;
-  /* Set a background color */
   color: white;
-  /* Text color */
   cursor: pointer;
-  /* Add a mouse pointer on hover */
   padding: 15px;
-  /* Some padding */
   border-radius: 10px;
-  /* Rounded corners */
   font-size: 18px;
-  /* Increase font size */
 }
 
 #myBtn:hover {
   background-color: #555;
-  /* Add a dark-grey background on hover */
 }

@@ -57,59 +57,24 @@ var listItems = document.querySelectorAll('.draggable');
  var strHrs = ' Hrs ';
  var addtime =[];
  function addRow(mytable) {
-   var food = document.createTextNode(document.querySelector('.input').value);
-   var category = document.createTextNode(document.querySelector('.input2').value);
-   var time = document.createTextNode(document.querySelector('.input3').value);
-    document.querySelector('.input').value = '';
-     document.querySelector('.input2').value = '';
-      document.querySelector('.input3').value = '';
-
-  if (food != '') {
-
-    var tableRef = document.getElementById(mytable);
-    var attr = document.createAttribute('draggable');
-    attr.value = 'true';
-    // Insert a row at the end of the table
-    var newRow = tableRef.insertRow(-1);
-    newRow.setAttributeNode(attr);
-    newRow.className = 'draggable';
-    // Insert a cell in the row at index 0
-    var newCell = newRow.insertCell(0);
-    var newCell2 = newRow.insertCell(1);
-    var newCell3 = newRow.insertCell(2);
-
-    var newText = food;
-    var newText2 = category;
-    var newText3 = time;
-
-    newCell.appendChild(food);
-    newCell2.appendChild(newText2);
-    newCell3.appendChild(newText3);
-    addEventsDragAndDrop(newRow);
 
 }
-  const newValue = newCell3.innerHTML;
-  let total = 0;
-  addtime.push(parseInt(newValue, 10));
-  for(var i in addtime) {
-     total += addtime[i];
-     }
 
-   if (total <60){
-      document.getElementById("totalTime").innerHTML = total + strMins;
-      }
-   else{
-        var hours = (total / 60);
-        var rhours = Math.floor(hours);
-        var minutes = (hours - rhours) * 60;
-        var rminutes = Math.round(minutes);
-        document.getElementById("totalTime").innerHTML = rhours + strHrs + rminutes + strMins ;
-       }
-   const newValue2 = newCell2.innerHTML;
-   var smartArr = [];
-   
+function getTime()){
+
 }
 
+function setTime(){
+
+}
+
+function toMinsHrs(){
+
+}
+
+function restrictBoxInput(){
+  
+}
 
   document.getElementById('btn').addEventListener('click', function(){addRow('mytable');});
 

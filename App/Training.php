@@ -24,7 +24,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
          <div class="item1">
            <div class="header">
              <h1>E-TrainHing with Preparation list</h1>
-             <p1>Section: Larder</p1>
            </div>
          </div>
          <div class="item2">
