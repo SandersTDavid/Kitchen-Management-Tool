@@ -13,7 +13,7 @@ $(document).ready(function() {
        }
        else {
            $.ajax({
-               type: "GET",
+               type: "POST",
                url: "ajax.php",
                data: {
                    search: food_name
@@ -39,7 +39,7 @@ $(document).ready(function() {
        }
        else {
            $.ajax({
-               type: "GET",
+               type: "POST",
                url: "ajax.php",
                data: {
                    search: food_category
@@ -66,7 +66,7 @@ $(document).ready(function() {
        }
        else {
            $.ajax({
-               type: "GET",
+               type: "POST",
                url: "ajax.php",
                data: {
                    search: food_time

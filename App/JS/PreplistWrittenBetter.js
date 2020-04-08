@@ -68,12 +68,12 @@ function setTime(){
 
 }
 
-function toMinsHrs(){
+function toMinsHrs(time){
 
 }
 
 function restrictBoxInput(){
-  
+
 }
 
   document.getElementById('btn').addEventListener('click', function(){addRow('mytable');});

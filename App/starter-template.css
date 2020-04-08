@@ -1,0 +1,7 @@
+body { padding-top: 10px; }
+.starter-template { max-width:640px;margin:0 auto;padding: 25px 15px; }
+/* ajax live search */
+.ajax-search { position: relative; }
+.ajax-search ul { list-style-type:none;position:absolute;z-index:10;padding:0; }
+.ajax-search ul.active { border:1px solid #ccc;background-color: #fff;padding:5px 0; }
+.ajax-search ul li { background-color: #F5F5F5;margin:5px 10px;padding:5px 10px; }
