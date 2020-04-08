@@ -56,7 +56,6 @@ var listItems = document.querySelectorAll('.draggable');
  var strMins = ' Mins';
  var strHrs = ' Hrs ';
  var addtime =[];
- var smartArr = [];
 
  function addRow(mytable) {
    var food = document.createTextNode(document.querySelector('.input').value);
@@ -65,9 +64,7 @@ var listItems = document.querySelectorAll('.draggable');
     document.querySelector('.input').value = '';
      document.querySelector('.input2').value = '';
       document.querySelector('.input3').value = '';
-
   if (food != '') {
-
     var tableRef = document.getElementById(mytable);
     var attr = document.createAttribute('draggable');
     attr.value = 'true';
@@ -80,19 +77,15 @@ var listItems = document.querySelectorAll('.draggable');
     var newCell2 = newRow.insertCell(1);
     var newCell3 = newRow.insertCell(2);
 
-    var newText = food;
-    var newText2 = category;
-    var newText3 = time;
-
     newCell.appendChild(food);
-    newCell2.appendChild(newText2);
-    newCell3.appendChild(newText3);
+    newCell2.appendChild(category);
+    newCell3.appendChild(time);
     addEventsDragAndDrop(newRow);
 
 }
-  const newValue = newCell3.innerHTML;
+  const timeValue = newCell3.innerHTML;
   let total = 0;
-  addtime.push(parseInt(newValue, 10));
+  addtime.push(parseInt(timeValue, 10));
   for(var i in addtime) {
      total += addtime[i];
      }
@@ -107,14 +100,7 @@ var listItems = document.querySelectorAll('.draggable');
         var rminutes = Math.round(minutes);
         document.getElementById("totalTime").innerHTML = rhours + strHrs + rminutes + strMins ;
        }
-
 }
 
 
   document.getElementById('btn').addEventListener('click', function(){addRow('mytable');});
-
-  // function clearText() {
-  //   document.getElementById("search").reset();
-  //   document.getElementById("search2").reset();
-  //   document.getElementById("search3").reset();
-  // }

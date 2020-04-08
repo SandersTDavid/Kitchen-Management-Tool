@@ -2,7 +2,7 @@
 
 include "config.php";
 
-if (isset($_POST['search'])) {
+if (isset($_POST['search']) && strlen($_POST['search']) >= 2) {
    $Name = $_POST['search'];
    $Query = "SELECT food_name, food_category, food_time FROM food WHERE food_name LIKE '%$Name%' ";
    $ExecQuery = MySQLi_query($link, $Query);

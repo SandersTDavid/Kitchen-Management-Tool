@@ -32,7 +32,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
          <div class="item1">
            <div class="header">
-             <h1>E-Training with Preparation list</h1>
+                <h1><b>iCanPrep</b> Chefs E-Training with Preparation List</h1>
            </div>
          </div>
 
@@ -65,7 +65,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
          <div class="fifth">
            <h3>Search Components</h3>
             <div class="adder">
-             <input type="text" id="search" class="input" autofocus autocomplete="off" placeholder="Add items in your list..">
+             <input type="text" id="search" class="input" autofocus autocomplete="off" placeholder="Add items in your list.." onkeyup="success()">
              <div id="display"></div>
              <span id='btn' class="add" onclick="clearText()">+</span>
              <input type"text" class="input2" id="search2" autocomplete="off" disabled>

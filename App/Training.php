@@ -23,7 +23,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
       <div class="grid-container">
          <div class="item1">
            <div class="header">
-             <h1>E-TrainHing with Preparation list</h1>
+                <h1><b>iCanPrep</b> Chefs E-Training with Preparation List</h1>
            </div>
          </div>
          <div class="item2">

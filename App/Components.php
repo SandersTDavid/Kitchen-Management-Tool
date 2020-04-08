@@ -106,7 +106,7 @@ if(empty(trim($_POST["food_name"]))){
 
      <div class="item1">
       <div class="header">
-         <h1>E-Training with Preparation list</h1>
+          <h1><b>iCanPrep</b> Chefs E-Training with Preparation List</h1>
       </div>
      </div>
 

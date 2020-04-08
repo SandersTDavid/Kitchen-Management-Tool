@@ -78,7 +78,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   <div class="grid-container">
    <div class="item1">
     <div class="header">
-     <h1>E-Training with Preparation list</h1>
+     <h1><b>iCanPrep</b> Chefs E-Training with Preparation List</h1>
     </div>
    </div>
 
@@ -93,8 +93,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     </div>
 
    <div class="item3">
-    <div class="third" width="200px">
-     <p>change account info</p>
+    <div class="third">
+     <b><h3>Change Account Information</h3></b>
     </div>
    </div>
 

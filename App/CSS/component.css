@@ -114,6 +114,7 @@ p1 {
 
 .item1 {
   grid-area: header;
+  background: #cc8800;
 }
 
 .item2 {
