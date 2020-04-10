@@ -97,7 +97,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   <link rel="icon" href="media/favicon/favicon.ico" sizes="16x16" type="image/png">
     <meta charset="UTF-8">
     <title>Login</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
     <link href='CSS/Login.css' rel='stylesheet' type='text/css'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 </head>
@@ -119,32 +118,37 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <li><a href="LandingPage.html">Home</a></li>
             </ul>
          </nav>
-       </div>H
+       </div>
 
     <div class="item3">
       <div class = 'BlackBox' id ="centre_BlackBox">
-      <div class = 'move-Content' id = "move-Content">
+        <div class ="sidebyside">
+       <div class = "picture" id = "picture">
+
         <img src="Media/Logo.jpg" width="350" height="350" class = "img-center">
+      </div>
+
+      <div class = 'move-Content' id = "move-Content">
         <h2>Login</h2>
-        <p>Please fill in your credentials to login.</p>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group <?php echo (!empty($email_err)) ? 'has-error' : ''; ?>">
                 <p1>Email</p1>
-                <input type="text" name="email" class="form-control" value="<?php echo $email; ?>">
+                <input type="text" name="email" class="form-control" id="input" value="<?php echo $email; ?>">
                 <span class="help-block"><?php echo $email_err; ?></span>
             </div>
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
                 <p1>Password</p1>
-                <input type="password" name="password" class="form-control">
+                <input type="password" name="password" class="form-control" id="input">
                 <span class="help-block"><?php echo $password_err; ?></span>
             </div>
             <div class="form-group" id = "center_buttons">
-                <input type="submit" class="btn btn-primary" value="Login">
+                <input type="submit" class="btn" value="Login">
             </div>
             <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
             <p><a href="LandingPage.html">Go back</a></p>
         </form>
       </div>
+    </div>
     </div>
     </div>
     </div>

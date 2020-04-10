@@ -3,23 +3,45 @@ body {
   background-image: url("Background.jpg");
   background-attachment: fixed;
   background-size: cover;
+  overflow: hidden;
 }
 
 h1 {
   font-size: 26px;
-  padding: 2px;
+}
+
+H2 {
+  text-align: center;
+  color: silver;
+  font-size: 30px;
+  font-weight: 200;
+  border-bottom: 1px solid;
+  border-width: thin;
+}
+
+p {
+  text-align: center;
+  color: silver;
+    font-size: 16px;
+}
+
+a{
+  color: #3369ff;
+}
+a:hover{
+  color: #3399fd;
 }
 
 .header {
   padding: 10px;
   text-align: center;
-  background: #cc8800;
   color: black;
-  font-size: 30px;
+  font-size: 20px;
 }
 
 .item1 {
   grid-area: header;
+  background: #cc8800;
 }
 
 .item2 {
@@ -58,7 +80,7 @@ h1 {
 
 .navbar {
   box-shadow: 0 0 10px rgba(0.5, 0.5, 0.5, 0.5);
-  margin: -1px -1px 25px -1px;
+  margin: -1px -1px 5px -1px;
 }
 
 #selected a {
@@ -87,70 +109,106 @@ li a {
 /*Adjusts Logo to the center of the page */
 .img-center {
   border-radius: 22%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin:auto;
   object-fit: width 50px height 50px;
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
   padding: 1px;
   border: 1px solid #021a40;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-/*Moves content to the center of the Red box*/
-.move-Content {
-  padding: 45px;
-}
 
-/*Adjusts heading text to the center of the page */
-H2 {
-  text-align: center;
-  color: silver;
-}
 
-/*Adjusts paragraph text to the center of the page */
-p {
-  text-align: center;
-  color: silver;
-}
-
-p1 {
-  text-align: left;
-  color: silver;
-}
-
-/*creates and styles button */
-.button {
-  background-color: white;
-  color: black;
-  border: 1px solid #555555;
-  padding: 16px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  transition-duration: 0.4s;
-  -webkit-transition-duration: 0.4s;
-  /* Safari */
-  cursor: pointer;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-/*Centers the button on the page */
+/*Centers the register and clear buttons on the page */
 #center_buttons {
   display: flex;
   justify-content: center;
 }
 
-/*Creates and styles the Red box, adds shade/ makes the corners round ect.*/
+@media screen and (max-width: 600px) {
+  .sidebyside {
+    width: 100%;
+  }
+}
 .BlackBox {
   background: #232020;
-  width: 400px;
-  height: 800px;
+  width: 590px;
+  height: 370px;
   border-radius: 40px;
-  margin: 0 auto 0 auto;
-  padding: 0px 0px 0px 0px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 10), 0 6px 20px 0 rgba(0, 0, 0, 18);
+  margin:auto;
+  padding: 10px;
+}
+
+.container {
+ width: auto;
+ margin: auto;
+ height: auto;
+}
+
+.A {
+  margin-top: 120px;
+ text-align: center;
+ float: left;
+ white-space: wrap;
+}
+.B {
+ float: left;
+ text-align: center;
+ margin-left: 10px;
+ white-space: wrap;
+ padding: 5px;
+}
+
+.C {
+text-align: center;
+float: right;
+white-space: wrap;
+padding: 5px;
+}
+
+.form-control{
+margin-bottom: 10px;
+padding: 3px 8px;
+}
+
+.form-group{
+  margin-left: 20px;
+  width: 170px;
+  text-align: left;
+  color: silver;
+}
+
+.btn{
+padding: 0.7em 1.7em;
+margin: 0 0.3em 0.3em 0;
+border-radius: 0.2em;
+box-sizing: border-box;
+text-decoration: none;
+font-weight: 400;
+color: #FFFFFF;
+background-color: #3369ff;
+box-shadow: inset 0 -0.6em 1em -0.35em rgb(0,0,0,0.17), inset 0 0.6em 2em -0.3em rgba(255,255,255,0.15),inset 0 0 0em 0.05em rgba(255,255,255,0.12);
+text-align: center;
+position: relative;
+border: none;
+}
+
+.btn:hover{
+background-color:#3399fd;
+}
+
+#input{
+  border-radius: 0.2em;
+  border: none;
+  height: 25px;
+}
+
+#clear{
+  background-color: grey;
+}
+
+#clear:hover{
+background-color: darkgray;
 }

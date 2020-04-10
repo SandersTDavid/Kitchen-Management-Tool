@@ -103,7 +103,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   <link rel="icon" href="Media/favicon/favicon.ico" sizes="16x16" type="image/png">
     <meta charset="UTF-8">
     <title>Register</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
     <link href='CSS/Register.css' rel='stylesheet' type='text/css'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 </head>
@@ -129,48 +128,53 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <div class="item3">
 
       <div class = 'BlackBox' id ="centre_BlackBox">
-        <div class = 'move-Content' id = "move-Content">
+<div class ="container">
+<div class = "A" id = "picture">
           <img src="Media/Logo.jpg" width="350" height="350" class = "img-center">
-        <h2>Sign Up</h2>
-        <p>Please fill this form to create an account.</p>
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-          <div class="form-group>">
-              <p1>First Name</p1>
-              <input type="text" name="fname" class="form-control" value="<?php echo $fname; ?>">
-          </div>
-          <div class="form-group>">
-                <p> </p>
-              <p1>Last Name</p1>
+</div>
 
-              <input type="text" name="lname" class="form-control" value="<?php echo $lname; ?>">
+        <h2>Sign Up</h2>
+        <p>Please fill in this form to create an account.</p>
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+<div class = 'B'>
+          <div class="form-group">
+              <p1>First Name</p1>
+              <input type="text" id="input" name="fname" class="form-control" value="<?php echo $fname; ?>">
+          </div>
+          <div class="form-group">
+              <p1>Last Name</p1>
+              <input type="text" id="input" name="lname" class="form-control" value="<?php echo $lname; ?>">
           </div>
             <div class="form-group <?php echo (!empty($email_err)) ? 'has-error' : ''; ?>">
-              <p> </p>
                 <p1>Email</p1>
-
-                <input type="text" name="email" class="form-control" value="<?php echo $email; ?>">
+                <input type="text" id="input" name="email" class="form-control" value="<?php echo $email; ?>">
                 <span class="help-block"><?php echo $email_err; ?></span>
             </div>
+</div>
+<div class="C">
+
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
                 <p1>Password</p1>
-                <input type="password" name="password" class="form-control" value="<?php echo $password; ?>">
+                <input type="password" id="input" name="password" class="form-control" value="<?php echo $password; ?>">
                 <span class="help-block"><?php echo $password_err; ?></span>
             </div>
             <div class="form-group <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
                 <p1>Confirm Password</p1>
-                <input type="password" name="confirm_password" class="form-control" value="<?php echo $confirm_password; ?>">
+                <input type="password" id="input" name="confirm_password" class="form-control" value="<?php echo $confirm_password; ?>">
                 <span class="help-block"><?php echo $confirm_password_err; ?></span>
             </div>
             <div class="form-group" id = "center_buttons">
-                <input type="submit" class="btn btn-primary" value="Register">
-                <input type="reset" class="btn btn-default" value="Clear">
+                <input type="submit" class="btn" value="Register">
+                <input type="reset" class="btn" value="Clear" id="clear">
             </div>
             <p>Already have an account? <a href="login.php">Login here</a>.</p>
             <p><a href="LandingPage.html">Go back</a></p>
+</div>
         </form>
-      </div>
 
+</div>
     </div>
+
   </div>
 </div>
 </div>
