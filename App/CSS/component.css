@@ -3,6 +3,7 @@ body {
   background-image: url("Background.jpg");
   background-attachment: fixed;
   background-size: cover;
+  font-family: 'Open Sans',sans-serif;
 }
 
 h1 {
@@ -11,13 +12,16 @@ h1 {
 }
 
 h2 {
-  font-size: 16px;
+  font-size: 32px;
   padding: 2px;
+  font-weight: 500;
+  font-family: Arial;
 }
 
 p1 {
-  font-size: 15px;
+  font-size: 16px;
   padding: 2px;
+  font-family: Arial;
 }
 
 .header {
@@ -26,6 +30,7 @@ p1 {
   background: #cc8800;
   color: black;
   font-size: 30px;
+  height: 100px;
 }
 
 .third {
@@ -37,14 +42,14 @@ p1 {
   margin-bottom: 20px;
   border-radius: 40px;
   width: 500px;
-  height: 265px;
+  height: 260px;
   padding: 12px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 10), 0 6px 20px 0 rgba(0, 0, 0, 18);
 }
 
 .fourth {
   background: white;
-  width: 550px;
+  width: 500px;
   margin: auto;
   border-radius: 40px;
   height: auto;
@@ -53,15 +58,16 @@ p1 {
 }
 
 .fifth {
-  padding: 1px;
+  padding: 10px;
   text-align: center;
   background: black;
   color: white;
   font-size: 10px;
+
 }
 
 .sixth {
-  padding: 1px;
+  padding: 10px;
   text-align: center;
   background: #cc8800;
   color: Black;
@@ -72,10 +78,6 @@ p1 {
   background-color: orange;
   box-shadow: 0 0 10px rgba(0.5, 0.5, 0.5, 0.5);
   transition: 0.35s;
-}
-
-.navbar {
-  box-shadow: 0 0 10px rgba(0.5, 0.5, 0.5, 0.5);
 }
 
 #selected {
@@ -90,6 +92,8 @@ p1 {
   background-color: #333;
   opacity: 0.95;
   font-size: 15px;
+  margin-left: 35%;
+  box-shadow: 0 0 10px rgba(0.5, 0.5, 0.5, 0.3);
 }
 
 .navbar a {
@@ -99,6 +103,7 @@ p1 {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  font-family: 'Open Sans',sans-serif;
 }
 
 #bb {
@@ -120,16 +125,18 @@ p1 {
 .item2 {
   grid-area: menu;
   z-index: 9999;
+  background-color: #333;
 }
 
 .item3 {
   grid-area: left;
   padding: auto;
+  margin-top: 20px;
 }
 
 .item4 {
   grid-area: main;
-  margin-top: 1px;
+  margin-top: 20px;
   margin-bottom: 100px;
 }
 
@@ -150,9 +157,9 @@ p1 {
   grid-template-areas:
     'header header header header header header'
     'menu menu menu menu menu menu'
+    'footer footer footer footer footer footer'
     'left left left main main main'
     'right right right right right right'
-    'footer footer footer footer footer footer'
     'logo logo logo logo logo logo';
   width: 100%;
   height: 100%;
@@ -259,6 +266,7 @@ margin-right: 100px;
   cursor: pointer;
   height: auto;
   width: auto;
+  font-weight: bold;
 }
 
 .setRadio input[type="radio"]:checked+label {
@@ -289,10 +297,12 @@ td {
   text-align: left;
   padding: 8px;
   width: 150px;
+  font-size: 12px;
 }
 
 th {
-  font-size: 20px, bold;
+  text-align: left;
+  font-size: 22px, bold;
   background-color: #f2f2f2;
 }
 
@@ -300,8 +310,26 @@ tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
-tbody {
-  font-size: 12px;
+
+
+.btn{
+padding: 0.7em 1.7em;
+margin: 0 0.3em 0.3em 0;
+border-radius: 0.2em;
+box-sizing: border-box;
+text-decoration: none;
+font-weight: 400;
+color: #FFFFFF;
+background-color: #3369ff;
+box-shadow: inset 0 -0.6em 1em -0.35em rgb(0,0,0,0.17), inset 0 0.6em 2em -0.3em rgba(255,255,255,0.15),inset 0 0 0em 0.05em rgba(255,255,255,0.12);
+text-align: center;
+position: relative;
+border: none;
+cursor: pointer;
+}
+
+.btn:hover{
+background-color:#3399fd;
 }
 
 #myBtn {

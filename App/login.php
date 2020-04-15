@@ -112,11 +112,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
          <div class="item2">
            <nav class="navbar">
-             <ul>
-                <li id = "selected"><b><a href="login.php">Login</a></b></li>
-                <li><a href="register.php">Register</a></li>
-                <li><a href="LandingPage.html">Home</a></li>
-            </ul>
+             <b><a href="login.php" id = "selected">Login</a></b>
+                <a href="register.php">Register</a>
+                <a href="LandingPage.html">Home</a>
          </nav>
        </div>
 
@@ -144,8 +142,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <div class="form-group" id = "center_buttons">
                 <input type="submit" class="btn" value="Login">
             </div>
-            <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
-            <p><a href="LandingPage.html">Go back</a></p>
+            <p>Don't have an account? <a href="register.php" id="link">Sign up now</a>.</p>
+            <p><a href="LandingPage.html" id="link">Go back</a></p>
         </form>
       </div>
     </div>

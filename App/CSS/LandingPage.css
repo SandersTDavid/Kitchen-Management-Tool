@@ -3,77 +3,90 @@ body {
   background-image: url("Background.jpg");
   background-attachment: fixed;
   background-size: cover;
+  font-family: 'Open Sans',sans-serif;
 }
 
 h1 {
   font-size: 26px;
   padding: 2px;
+  text-align: center;
+}
+
+h2{
+  font-size: 42px;
+  padding: 1px;
+  text-align: center;
+}
+
+p {
+  font-size: 18px;
+  color: darkred;
 }
 
 p1 {
-  font-size: 15px;
-  padding: 2px;
+  font-size: 14px;
+
 }
 
+p2 {
+  font-size: 24px;
+
+}
 .header {
   padding: 1px;
   text-align: center;
   background: #cc8800;
   color: black;
   font-size: 30px;
+  height: 100px;
 }
 
 .third {
-  padding: 1px;
+  padding: 0px;
+  margin-bottom: 10px;
   text-align: center;
-  background: white;
+  color: #8344c7;
+  font-size: 10px;
+  background-color: white;
+}
+
+.fourth {
+  padding: 0px;
+  text-align: center;
   color: black;
   font-size: 10px;
 }
 
-.fourth {
-  padding: 1px;
-  text-align: center;
-
-}
-
 .fifth {
-  padding: 1px;
-  text-align: center;
+  padding: 10px;
   background: black;
   color: white;
   font-size: 10px;
+  text-align: center;
+  margin-left: 100px;
+  margin-right: 100px;
+    margin-bottom: 30px;
 }
 
 .sixth {
-  padding: 1px;
-  text-align: center;
+  padding: 10px;
   background: grey;
   color: Black;
   font-size: 10px;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-bottom: 30px;
 }
 
 .navbar a:hover {
   background-color: orange;
   box-shadow: 0 0 10px rgba(0.5, 0.5, 0.5, 0.5);
   transition: 0.35s;
-  colour: black;
 }
-
-.navbar {
-  box-shadow: 0 0 10px rgba(0.5, 0.5, 0.5, 0.5);
-}
-
-#selected a {
+#selected {
   background-color: black;
 }
-
-#gordon {
-max-width: 100%;
-max-height: 100%;
-}
-
-ul {
+.navbar  {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -81,59 +94,59 @@ ul {
   background-color: #333;
   opacity: 0.95;
   font-size: 15px;
+  margin-left: 40%;
+  box-shadow: 0 0 10px rgba(0.5, 0.5, 0.5, 0.5);
 }
-
-li a {
+.navbar a {
   float: left;
-  display: block;
+  display: inline-block;
   color: white;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-}
-
-#bb {
-  display: block;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  float: right;
-  background-color: #1f1f1f;
-  cursor: pointer;
-}
-
-li a:hover {
-  background-color: #111;
+  font-family: 'Open Sans',sans-serif;
 }
 
 .item1 {
   grid-area: header;
+  background: #cc8800;
+  padding: 0px;
 }
 
 .item2 {
   grid-area: menu;
   z-index: 9999;
+  padding: 0px;
+  background-color: #333;
 }
 
-.item3 {
-  grid-area: left;
+.item3{
+  position: fixed;
+  top: 150px;
+  right: 150px;
+  z-index: 9999;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .item4 {
-  grid-area: main;
-  
+  grid-area: center;
 }
 
 .item5 {
   grid-area: footer;
+  position: relative;
+  top:-100px;
+  background: black;
 }
 
 .item6 {
+  border-top: 5px solid;
   grid-area: right;
-}
-
-.item7 {
-  grid-area: right;
+  position: relative;
+  top:-100px;
+  background: grey;
 }
 
 .grid-container {
@@ -141,7 +154,7 @@ li a:hover {
   grid-template-areas:
     'header header header header header header'
     'menu menu menu menu menu menu'
-    'main main main main main main'
+    'center center center center center center'
     'right right right right right right'
     'footer footer footer footer footer footer'
     'logo logo logo logo logo logo';
@@ -159,45 +172,49 @@ li a:hover {
 
 img {
   padding-top: 98px;
-  width: 200px;
-  height: 200px;
+  max-height: 100%;
   max-width: 100%;
-  height: auto;
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
+#sneakPreview{
+position: relative;
+top:-100px;
+}
 
 #myBtn {
   display: none;
-  /* Hidden by default */
   position: fixed;
-  /* Fixed/sticky position */
   bottom: 20px;
-  /* Place the button at the bottom of the page */
   right: 30px;
-  /* Place the button 30px from the right */
   z-index: 99;
-  /* Make sure it does not overlap */
   border: none;
-  /* Remove borders */
   outline: none;
-  /* Remove outline */
   background-color: black;
-  /* Set a background color */
   color: white;
-  /* Text color */
   cursor: pointer;
-  /* Add a mouse pointer on hover */
   padding: 15px;
-  /* Some padding */
   border-radius: 10px;
-  /* Rounded corners */
   font-size: 18px;
-  /* Increase font size */
 }
 
 #myBtn:hover {
   background-color: #555;
   /* Add a dark-grey background on hover */
+}
+
+#close {
+    float:right;
+    display:inline-block;
+    padding:2px 5px;
+    background:#ccc;
+}
+
+#close:hover {
+    float:right;
+    display:inline-block;
+    padding:2px 5px;
+    background:#ccc;
+    color:#fff;
 }

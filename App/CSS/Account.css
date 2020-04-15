@@ -3,6 +3,7 @@ body {
   background-image: url("Background.jpg");
   background-attachment: fixed;
   background-size: cover;
+  font-family: 'Open Sans',sans-serif;
 }
 
 h1 {
@@ -38,6 +39,7 @@ p1 {
   background: #cc8800;
   color: black;
   font-size: 30px;
+    height: 80px;
 }
 
 .third {
@@ -45,7 +47,7 @@ p1 {
   text-align: center;
   background: white;
   color: black;
-  font-size: 10px;
+  font-size: 14px;
 }
 
 .fourth {
@@ -84,7 +86,9 @@ p1 {
   background-color: #333;
   opacity: 0.95;
   font-size: 15px;
-  box-shadow: 0 0 10px rgba(0.5, 0.5, 0.5, 0.5);
+  box-shadow: 0 0 10px rgba(0.3, 0.5, 0.5, 0.5);
+  margin-left: 35%;
+height: 100%;
 }
 
 .navbar a {
@@ -94,6 +98,9 @@ p1 {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  font-family: 'Open Sans',sans-serif;
+  height: 100%;
+
 }
 
 #bb {
@@ -106,29 +113,54 @@ p1 {
   cursor: pointer;
 }
 
+#link{
+  color: #3369ff;
+}
+#link:hover{
+  color: #3399fd;
+}
+
+.btn{
+padding: 0.7em 1.7em;
+margin: 0 0.3em 0.3em 0;
+border-radius: 0.2em;
+box-sizing: border-box;
+text-decoration: none;
+font-weight: 400;
+color: #FFFFFF;
+background-color: #3369ff;
+box-shadow: inset 0 -0.6em 1em -0.35em rgb(0,0,0,0.17), inset 0 0.6em 2em -0.3em rgba(255,255,255,0.15),inset 0 0 0em 0.05em rgba(255,255,255,0.12);
+text-align: center;
+position: relative;
+border: none;
+cursor: pointer;
+}
+
+.btn:hover{
+background-color:#3399fd;
+}
 
 .item1 {
   grid-area: header;
   background: #cc8800;
+  height: 80px;
 }
 
 .item2 {
   grid-area: menu;
   z-index: 9999;
+  background-color: #333;
+  position: relative;
 }
 
 .item3 {
+  grid-area: info;
   background-color: white;
-  grid-area: left;
-}
 
-.item4 {
-  grid-area: main;
-  background-size: cover;
 }
 
 .item5 {
-  grid-area: fifth;
+  grid-area: main;
   padding: 20px 0px 0px 0px;
 }
 
@@ -141,9 +173,8 @@ p1 {
   grid-template-areas:
     'header header header header header header'
     'menu menu menu menu menu menu'
+    'info info info info info info'
     'main main main main main main'
-    'left left left left left left'
-    'fifth fifth fifth fifth fifth fifth'
     'logo logo logo logo logo logo';
   width: 100%;
   height: 100%;
@@ -157,15 +188,6 @@ p1 {
   bottom: 0;
 }
 
-.wrapper2 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-
-/*creates and styles button */
 .button1 {
   background-color: white;
   color: black;
@@ -183,9 +205,8 @@ p1 {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-/*Centers the button on the page */
 .form_text {
-  colour: silver;
+  color: silver;
   font-size: 10px;
   margin: 0 auto 0 auto;
   padding: 0px 0px 0px 0px;
@@ -198,7 +219,7 @@ p1 {
 .BlackBox {
   background: #232020;
   width: 300px;
-  height: 400px;
+  height: 350px;
   border-radius: 40px;
   margin: 0 auto 0 auto;
   padding: 0px 0px 0px 0px;

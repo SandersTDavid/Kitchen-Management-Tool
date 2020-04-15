@@ -69,7 +69,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   <meta charset="utf-8">
   <title>Account</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
   <link  rel='stylesheet' href='CSS/Account.css' type='text/css'>
 </head>
 
@@ -98,8 +97,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     </div>
    </div>
 
-  <div class="item4"> </div>
-
   <div class="item5">
    <div class="fifth">
     <div class = 'BlackBox' id ="centre_BlackBox">
@@ -116,9 +113,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
           <input type="password" name="confirm_password" class="form-control">
           <span class="help-block"><?php echo $confirm_password_err; ?></span>
          </div>
+         <br>
           <div class="form-group">
            <input type="submit" class="btn btn-primary" value="Submit">
-           <a class="btn btn-link" href="javascript:history.go(-1)" title="Return to the previous page">&laquo; Go back</a>
+           <a id="link" class="btn-link" href="javascript:history.go(-1)" title="Return to the previous page">&laquo; Go back</a>
          </div>
         </form>
        </div>

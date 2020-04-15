@@ -9,57 +9,76 @@
 </head>
 
 <body>
-<div class = "wrapper">
-      <div class="grid-container">
-         <div class="item1">
-           <div class="header">
-              <h1><b>iCanPrep</b> Chefs E-Training with Preparation List</h1>
-           </div>
-         </div>
-         <div class="item2">
-           <nav class="navbar">
-             <ul>
-                <li><a href="login.php">Login</a></li>
-                <li><a href="register.php">Register</a></li>
-                <li id = "selected"><b><a href="LandingPage.php">Home</a></b></li>
-            </ul>
-         </nav>
-        </div>
+ <div class = "wrapper">
+  <div class="grid-container">
+   <div class="item1">
+    <div class="header">
+     <h1>iCanPrep Chefs E-Training with Preparation List</h1>
+    </div>
+   </div>
 
-         <div class="item4">
-           <div class="fourth">
-           <img src="Media/gordon.jpg" alt="gordon" id="gordon">
-         </div>
-       </div>
-
-         <div class="item5">
-         <div class="fifth">
-           <h1>How can your kitchen benefit</h1>
-           <p1>Lorem ipsum dolor sit amet, cu legere possim eloquentiam pro. Autem iudico necessitatibus et per, ex nec aliquid officiis. Usu feugiat similique ei, impetus forensibus eu sea. At sea blandit percipit accusata, brute argumentum signiferumque ea cum. Ex erat causae fabellas usu. Id adhuc perfecto eum, an tantas tractatos tincidunt nam, ea ius mutat complectitur.
-             Lorem ipsum dolor sit amet, cu legere possim eloquentiam pro. Autem iudico necessitatibus et per, ex nec aliquid officiis. Usu feugiat similique ei, impetus forensibus eu sea. At sea blandit percipit accusata, brute argumentum signiferumque ea cum. Ex erat causae fabellas usu. Id adhuc perfecto eum, an tantas tractatos tincidunt nam, ea ius mutat complectitur.
-           </p>
-         </div>
-         </div>
-         <div class="item6">
-           <div class="sixth">
-             <h1>Why use icanprep</h1>
-             <p1>
-               Lorem ipsum dolor sit amet, cu legere possim eloquentiam pro. Autem iudico necessitatibus et per, ex nec aliquid officiis. Usu feugiat similique ei, impetus forensibus eu sea. At sea blandit percipit accusata, brute argumentum signiferumque ea cum. Ex erat causae fabellas usu. Id adhuc perfecto eum, an tantas tractatos tincidunt nam, ea ius mutat complectitur.
-             </p1>
-           </div>
-         </div>
-
-        <div class="logo">
-          <img src="Media/Logo.jpg" alt="Chef hat">
-        </div>
+    <div class="item2">
+      <nav class="navbar">
+           <a href="login.php">Login</a></li>
+           <a href="register.php">Register</a></li>
+        <b><a href="LandingPage.php" id = "selected">Home</a></b>
+      </nav>
      </div>
-</div>
+
+    <div class="item3">
+     <div class="third">
+       <span id='close' onclick='this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode); return false;'>x</span>
+        <h1>Student Project UoP</h1>
+        <p1>This website was produced for the purpose of a university software engineering project. Please only use this website for experimentation with your training subject.</p1>
+      </div>
+     </div>
+
+      <div class="item4">
+       <div class="fourth">
+          <img src="Media/frontpage.png" alt="sneakPreview" id="sneakPreview">
+       </div>
+      </div>
+
+      <div class="item5">
+       <div class="fifth">
+        <h2>How can your kitchen benefit</h2>
+         <p2>
+             Using these tools, you could reduce the time it takes to fully train a chef on multiple sections in the kitchen.
+           <br>
+           <br>Reduce the amount of training time and save on staff expenses.
+           <br>
+           <br>Employees that are happier with their training are more likely to lead to staff retention.
+        </p2>
+       </div>
+      </div>
+
+      <div class="item6">
+       <div class="sixth">
+        <h2>Why use iCanPrep</h2>
+         <p2>
+             This website provides useful tools to help new or inexperienced chefs to get to know their section in the kitchen.
+             <br>
+             <br>The <b>first tool</b> on the components page allows the chef to take out all the different components in the section and to indivdually add them to a list along with a method of preparation and the amount of time it should take to prepare.
+             <br>
+             <br>The <b>second tool</b> on the preparation list page allows the chef to quickly add an item to a daily preplist and swap the order of it. This helps the chef think about the best order that the list could go in to get the most amount of work done.
+             It will also display the total preparation time.
+        </p2>
+      </div>
+     </div>
+
+     <div class="item7">
+      <div class="logo">
+        <img src="Media/Logo.jpg" alt="Chef hat" id="chef">
+      </div>
+     </div>
+
+  </div>
+ </div>
 </body>
 
 <footer>
   <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
   <script src="JS/pageup.js"></script>
-
 </footer>
 
 </html>

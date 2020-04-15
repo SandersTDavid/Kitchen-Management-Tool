@@ -1,16 +1,16 @@
-/*Padding around the page body and dark background colour */
 body {
   background-image: url("Background.jpg");
   background-attachment: fixed;
   background-size: cover;
   overflow: hidden;
+  font-family: 'Open Sans',sans-serif;
 }
 
 h1 {
   font-size: 26px;
 }
 
-H2 {
+h2 {
   text-align: center;
   color: silver;
   font-size: 30px;
@@ -22,7 +22,7 @@ H2 {
 p {
   text-align: center;
   color: silver;
-    font-size: 16px;
+  font-size: 16px;
 }
 
 a{
@@ -37,6 +37,7 @@ a:hover{
   text-align: center;
   color: black;
   font-size: 20px;
+  height: 50px;
 }
 
 .item1 {
@@ -47,6 +48,8 @@ a:hover{
 .item2 {
   grid-area: menu;
   z-index: 9999;
+  background-color: #333;
+  height: 46px;
 }
 
 .item3 {
@@ -78,16 +81,10 @@ a:hover{
   color: white;
 }
 
-.navbar {
-  box-shadow: 0 0 10px rgba(0.5, 0.5, 0.5, 0.5);
-  margin: -1px -1px 5px -1px;
-}
-
-#selected a {
+#selected {
   background-color: black;
 }
-
-ul {
+.navbar  {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -95,15 +92,17 @@ ul {
   background-color: #333;
   opacity: 0.95;
   font-size: 15px;
+  margin-left: 40%;
+  box-shadow: 0 0 10px rgba(0.5, 0.5, 0.5, 0.5);
 }
-
-li a {
+.navbar a {
   float: left;
-  display: block;
+  display: inline-block;
   color: white;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  font-family: 'Open Sans',sans-serif;
 }
 
 /*Adjusts Logo to the center of the page */
@@ -130,10 +129,11 @@ li a {
   .sidebyside {
     width: 100%;
   }
+
 }
 .BlackBox {
   background: #232020;
-  width: 590px;
+  width: 595px;
   height: 370px;
   border-radius: 40px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 10), 0 6px 20px 0 rgba(0, 0, 0, 18);
@@ -193,6 +193,7 @@ box-shadow: inset 0 -0.6em 1em -0.35em rgb(0,0,0,0.17), inset 0 0.6em 2em -0.3em
 text-align: center;
 position: relative;
 border: none;
+cursor: pointer;
 }
 
 .btn:hover{

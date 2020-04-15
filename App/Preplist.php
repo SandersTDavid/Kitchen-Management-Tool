@@ -45,6 +45,16 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                 <a href="logout.php" id= "bb">Log out</a>
          </nav>
         </div>
+        <div class="item3">
+          <div class="third">
+            <h1>Phase Two</h1>
+            <p1>
+               Search for the components that have been added in phase one, in the drop down list select the desired product.
+               <br>
+               Add thess to the preparation list and drag and drop to the desired position.
+            </p1>
+           </div>
+        </div>
 
         <div class="item4">
            <div class="fourth">
@@ -80,8 +90,16 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
          <div class="sixth">
            <h1>Training advice</h1>
            <p1>
-           Lorem ipsum dolor sit amet, cu legere possim eloquentiam pro. Autem iudico necessitatibus et per, ex nec aliquid officiis. Usu feugiat similique ei, impetus forensibus eu sea. At sea blandit percipit accusata, brute argumentum signiferumque ea cum. Ex erat causae fabellas usu. Id adhuc perfecto eum, an tantas tractatos tincidunt nam, ea ius mutat complectitur.
-           </p1>
+             To get the total time of the list make sure that the data is correct when selecting from the list.
+             <br>
+             Trainee chef must first order the list and the section chef must check whether it is correct.
+             <br>
+             If it is not correct, the advice to give would be to order components so that cooking of various items can take place
+             whilst other items can be prepared.
+             <br>
+             An efficient order would be to put some items in to cook at the start of the day, but remember it could be limited to how
+             many spaces in the oven there is.
+          </p1>
           </div>
        </div>
 

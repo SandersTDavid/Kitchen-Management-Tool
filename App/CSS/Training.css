@@ -3,53 +3,106 @@ body {
   background-image: url("Background.jpg");
   background-attachment: fixed;
   background-size: cover;
+  font-family: 'Open Sans',sans-serif;
 }
 
 h1 {
   font-size: 26px;
   padding: 2px;
+  color: black;
 }
 
+h2{
+    font-size: 26px;
+    padding: 2px;
+    color: white;
+}
 p1 {
-  font-size: 15px;
-  padding: 2px;
+  font-family: 'Open Sans',sans-serif;
+  font-size: 19px;
+  color: #555;
 }
-
+p2 {
+  font-family: 'Open Sans',sans-serif;
+  font-size: 19px;
+  color: black;
+}
+p3 {
+  font-family: 'Open Sans',sans-serif;
+  font-size: 19px;
+  color: white;
+}
 .header {
   padding: 1px;
   text-align: center;
   background: #cc8800;
   color: black;
   font-size: 30px;
+  height: 100px;
 }
 
 .third {
-  padding: 1px;
+  padding: 50px;
   text-align: center;
   background: white;
-  color: black;
-  font-size: 10px;
+  font-family: 'Open Sans',sans-serif;
+  font-size: 18px;
+
 }
 
 .fourth {
   text-align: center;
-    max-width: 100%;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sidebyside{
+  width: 80%;
 }
 
 .fifth {
-  padding: 1px;
+  text-align: center;
+  background: grey;
+  color: black;
+  font-size: 10px;
+  font-family: 'Open Sans',sans-serif;
+  padding: 50px;
+  float: left;
+}
+.fifth2 {
+  text-align: left;
+  background: grey;
+  color: black;
+  font-size: 10px;
+  font-family: 'Open Sans',sans-serif;
+  padding: 50px;
+}
+
+.sixth {
   text-align: center;
   background: black;
   color: white;
   font-size: 10px;
+  font-family: 'Open Sans',sans-serif;
+  padding: 50px;
+  float: left;
 }
 
-.sixth {
-  padding: 1px;
-  text-align: center;
-  background: grey;
-  color: Black;
+.sixth2{
+  text-align: left;
+  background: black;
+  color: white;
   font-size: 10px;
+  font-family: 'Open Sans',sans-serif;
+  padding: 50px;
+}
+
+.seventh{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 55%;
 }
 
 .navbar a:hover {
@@ -58,15 +111,16 @@ p1 {
   transition: 0.35s;
 }
 
-.navbar {
-  box-shadow: 0 0 10px rgba(0.5, 0.5, 0.5, 0.5);
-}
-
-#selected a {
+#selected {
   background-color: black;
 }
+.navbar :hover {
+  background-color: orange;
+  box-shadow: 0 0 10px rgba(0.5, 0.5, 0.5, 0.5);
+  transition: 0.35s;
+}
 
-ul {
+.navbar  {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -74,15 +128,19 @@ ul {
   background-color: #333;
   opacity: 0.95;
   font-size: 15px;
+  margin-left: 35%;
+  box-shadow: 0 0 10px rgba(0.5, 0.5, 0.5, 0.3);
+
 }
 
-li a {
+.navbar a {
   float: left;
   display: block;
   color: white;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  font-family: 'Open Sans',sans-serif;
 }
 
 #bb {
@@ -95,10 +153,6 @@ li a {
   cursor: pointer;
 }
 
-li a:hover {
-  background-color: #111;
-}
-
 .item1 {
   grid-area: header;
 }
@@ -106,26 +160,49 @@ li a:hover {
 .item2 {
   grid-area: menu;
   z-index: 9999;
+  background-color: #333;
 }
 
 .item3 {
   grid-area: left;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 20px;
+  background-color: white;
 }
 
 .item4 {
+  border-top: 5px solid;
   grid-area: main;
+  padding-left: 100px;
+  padding-right: 100px;
+  background-color: white;
+  padding-bottom: 50px;
 }
 
 .item5 {
-  grid-area: footer;
+  grid-area: right;
+  position: relative;
+  top: -20px;
+  color: black;
+  background: grey;
+  border-bottom: 5px solid;
 }
 
 .item6 {
-  grid-area: right;
+  grid-area: footer;
+  position: relative;
+  top: -25px;
+  border-bottom: 5px solid;
+  background: black;
+  color: white;
 }
 
 .item7 {
-  grid-area: right;
+  position: relative;
+  top: -20px;
+  grid-area: pic;
+  background: white;
 }
 
 .grid-container {
@@ -136,8 +213,8 @@ li a:hover {
     'left left left left left left'
     'main main main main main main'
     'right right right right right right'
-    'footer footer footer footer footer footer'
-    'logo logo logo logo logo logo';
+    'pic pic pic pic pic pic'
+    'footer footer footer footer footer footer';
   width: 100%;
   height: 100%;
 }
@@ -155,36 +232,30 @@ img {
   max-width: 100%;
 }
 
+li{
+  font-weight: bold;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  width: 420px;
+}
+
 #myBtn {
   display: none;
-  /* Hidden by default */
   position: fixed;
-  /* Fixed/sticky position */
   bottom: 20px;
-  /* Place the button at the bottom of the page */
   right: 30px;
-  /* Place the button 30px from the right */
   z-index: 99;
-  /* Make sure it does not overlap */
   border: none;
-  /* Remove borders */
   outline: none;
-  /* Remove outline */
   background-color: black;
-  /* Set a background color */
   color: white;
-  /* Text color */
   cursor: pointer;
-  /* Add a mouse pointer on hover */
   padding: 15px;
-  /* Some padding */
   border-radius: 10px;
-  /* Rounded corners */
   font-size: 18px;
-  /* Increase font size */
 }
 
 #myBtn:hover {
   background-color: #555;
-  /* Add a dark-grey background on hover */
 }

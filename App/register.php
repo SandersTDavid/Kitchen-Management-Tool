@@ -117,16 +117,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
          <div class="item2">
            <nav class="navbar">
-             <ul>
-                <li ><a href="login.php">Login</a></li>
-                <li id = "selected"><b><a href="register.php">Register</a></b></li>
-                  <li ><a href="LandingPage.html">Home</a></li>
-            </ul>
+                <a href="login.php">Login</a>
+             <b><a href="register.php" id = "selected">Register</a></b>
+                <a href="LandingPage.html">Home</a>
          </nav>
         </div>
 
         <div class="item3">
-
       <div class = 'BlackBox' id ="centre_BlackBox">
 <div class ="container">
 <div class = "A" id = "picture">

@@ -96,7 +96,6 @@ if(empty(trim($_POST["food_name"]))){
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
   <link  rel='stylesheet' href='CSS/component.css' type='text/css'>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
   <script type="text/javascript" src="JS/componentScript.js"></script>
 </head>
 
@@ -138,7 +137,6 @@ if(empty(trim($_POST["food_name"]))){
           <div class="selectoption">
            <p> </p>
             <p1>Component Category</p1>
-             </br>
               <div class="setRadio">
                <input type="radio" id="radioCook"name="food_category"
                  <?php if(isset($food_category))  echo "checked"; ?>
@@ -166,7 +164,7 @@ if(empty(trim($_POST["food_name"]))){
 
         <div class="D">
          <div class="form-group" id = "center_buttons">
-          <input type="submit" class="btn btn-primary" value="Add">
+          <input type="submit" class="btn" value="Add">
          </div>
         </div>
       </div>
@@ -205,10 +203,11 @@ if(empty(trim($_POST["food_name"]))){
 
     <div class="item5">
      <div class="fifth">
-      <h1>Training advice</h1>
-       <p1>Lorem ipsum dolor sit amet, cu legere possim eloquentiam pro. Autem iudico necessitatibus et per, ex nec aliquid officiis. Usu feugiat similique ei, impetus forensibus eu sea. At sea blandit percipit accusata, brute argumentum signiferumque ea cum. Ex erat causae fabellas usu. Id adhuc perfecto eum, an tantas tractatos tincidunt nam, ea ius mutat complectitur.
-             Lorem ipsum dolor sit amet, cu legere possim eloquentiam pro. Autem iudico necessitatibus et per, ex nec aliquid officiis. Usu feugiat similique ei, impetus forensibus eu sea. At sea blandit percipit accusata, brute argumentum signiferumque ea cum. Ex erat causae fabellas usu. Id adhuc perfecto eum, an tantas tractatos tincidunt nam, ea ius mutat complectitur.
-       </p>
+      <h1>Phase One</h1>
+       <p1>
+          Add every single item that has to be prepared on the section.
+        <br> It is important to add the time of the component in minutes, don't forget that the time is from start to finish and not just how long it takes in the oven.
+       </p1>
       </div>
      </div>
 
@@ -216,7 +215,9 @@ if(empty(trim($_POST["food_name"]))){
      <div class="sixth">
       <h1>Training advice</h1>
        <p1>
-         Lorem ipsum dolor sit amet, cu legere possim eloquentiam pro. Autem iudico necessitatibus et per, ex nec aliquid officiis. Usu feugiat similique ei, impetus forensibus eu sea. At sea blandit percipit accusata, brute argumentum signiferumque ea cum. Ex erat causae fabellas usu. Id adhuc perfecto eum, an tantas tractatos tincidunt nam, ea ius mutat complectitur.
+          It is key to know of every single item to build a picture of what needs to be prepared and maintained on a daily basis. If one such item is missing from the section
+            the service will have to wait for it causing the customer to wait for their meal, or even worse, to be taken off the menu.
+          </section>
        </p1>
       </div>
      </div>
