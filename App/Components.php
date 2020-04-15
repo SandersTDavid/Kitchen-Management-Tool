@@ -129,6 +129,7 @@ if(empty(trim($_POST["food_name"]))){
                  <p1>Component Name</p1>
                   </br>
                    <input type="text" name="food_name" id="textbox" name="textbox" value="<?php echo $food_name; ?>">
+                   <br>
                     <span class="help-block"><?php echo $fname_err; ?></span>
                </div>
               </div>
@@ -158,6 +159,7 @@ if(empty(trim($_POST["food_name"]))){
             <p1>Component Time (Mins)</p1>
              </br>
               <input type="number" name="food_time" id="textbox" min="1" value="<?php echo $food_time; ?>">
+              <br>
                <span class="help-block"><?php echo $ftime_err; ?></span>
           </div>
          </div>
@@ -181,15 +183,18 @@ if(empty(trim($_POST["food_name"]))){
                    <th>Component</th>
                    <th>Category</th>
                    <th>Time</th>
+                   <th></th>
               </tr>
              </thead>
             <tbody>
               <?php
-                   $sql = "SELECT food_name, food_category, food_time FROM food ORDER BY food_name asc";
+                   $sql = "SELECT * FROM food ORDER BY food_name asc";
                    $result = $link->query($sql);
                if ($result->num_rows > 0) {
                    while($row = $result->fetch_assoc()) {
-                   echo "<tr ><td>" . $row["food_name"] . "</td><td>" . $row["food_category"] . "</td><td>" . $row["food_time"]."</td></td>" ;
+                   echo "<tr ><td>" . $row["food_name"] . "</td><td>" . $row["food_category"] . "</td><td>" . $row["food_time"]."</td>" ;
+                   echo "<td>". "<a href='DeleteSqlRow.php?id=" . $row["food_id"] . "'>Delete</a>" . "</td>";
+                   echo "</tr>";
                    }
                 }
               else {

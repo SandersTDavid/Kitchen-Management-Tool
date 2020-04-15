@@ -11,6 +11,7 @@ if (isset($_POST['search']) && strlen($_POST['search']) >= 2) {
    ';
    while ($Result = MySQLi_fetch_array($ExecQuery)) {
        ?>
+
    <li onclick='fill("<?php echo $Result['food_name']; ?>")'>
      <p  onclick='fill2("<?php echo $Result['food_category']; ?>")'>
       <p2  onclick='fill3("<?php echo $Result['food_time']; ?>")'>
