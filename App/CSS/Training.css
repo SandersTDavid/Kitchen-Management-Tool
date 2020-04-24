@@ -17,6 +17,13 @@ h2{
     padding: 2px;
     color: white;
 }
+
+h3 {
+  font-size: 18px;
+  padding: 2px;
+  color: black;
+}
+
 p1 {
   font-family: 'Open Sans',sans-serif;
   font-size: 19px;
@@ -37,7 +44,6 @@ p3 {
   text-align: center;
   background: #cc8800;
   color: black;
-  font-size: 30px;
   height: 100px;
 }
 

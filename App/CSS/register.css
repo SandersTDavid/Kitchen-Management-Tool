@@ -213,3 +213,6 @@ background-color:#3399fd;
 #clear:hover{
 background-color: darkgray;
 }
+.help-block{
+  font-size: 8px;
+}

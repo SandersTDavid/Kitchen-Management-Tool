@@ -2,13 +2,13 @@
 // Initialize the session
 session_start();
 
-// Check if the user is already logged in, if yes then redirect him to welcome page
+// Check if the user is already logged in, if yes then redirect them to welcome page
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("location: Training.php");
+    header("location: training.php");
     exit;
 }
 
-// Include config filee
+// Include config file
 require_once "config.php";
 
 // Define variables and initialize with empty values
@@ -67,7 +67,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["lname"] = $lname;
 
                             // Redirect user to welcome page
-                            header("location: Training.php");
+                            header("location: training.php");
                         } else{
                             // Display an error message if password is not valid
                             $password_err = "The password you entered was not valid.";
@@ -114,7 +114,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
            <nav class="navbar">
              <b><a href="login.php" id = "selected">Login</a></b>
                 <a href="register.php">Register</a>
-                <a href="LandingPage.html">Home</a>
+                <a href="index.html">Home</a>
          </nav>
        </div>
 
@@ -143,7 +143,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <input type="submit" class="btn" value="Login">
             </div>
             <p>Don't have an account? <a href="register.php" id="link">Sign up now</a>.</p>
-            <p><a href="LandingPage.html" id="link">Go back</a></p>
+            <p><a href="index.html" id="link">Go back</a></p>
         </form>
       </div>
     </div>

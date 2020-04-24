@@ -249,3 +249,10 @@ background-color:#3399fd;
 #myBtn:hover {
   background-color: #555;
 }
+
+#input{
+  border-radius: 0.2em;
+  border: none;
+  height: 25px;
+  padding-left: 10px;
+}

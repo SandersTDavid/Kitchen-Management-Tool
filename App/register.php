@@ -100,10 +100,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" href="Media/favicon/favicon.ico" sizes="16x16" type="image/png">
     <meta charset="UTF-8">
     <title>Register</title>
-    <link href='CSS/Register.css' rel='stylesheet' type='text/css'>
+    <link href='CSS/register.css' rel='stylesheet' type='text/css'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 </head>
 <body>
@@ -119,7 +118,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
            <nav class="navbar">
                 <a href="login.php">Login</a>
              <b><a href="register.php" id = "selected">Register</a></b>
-                <a href="LandingPage.html">Home</a>
+                <a href="index.html">Home</a>
          </nav>
         </div>
 
@@ -142,7 +141,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
               <p1>Last Name</p1>
               <input type="text" id="input" name="lname" class="form-control" value="<?php echo $lname; ?>">
           </div>
-            <div class="form-group <?php echo (!empty($email_err)) ? 'has-error' : ''; ?>">
+            <div   class="form-group <?php echo (!empty($email_err)) ? 'has-error' : ''; ?>">
                 <p1>Email</p1>
                 <input type="text" id="input" name="email" class="form-control" value="<?php echo $email; ?>">
                 <span class="help-block"><?php echo $email_err; ?></span>
@@ -150,22 +149,22 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 </div>
 <div class="C">
 
-            <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
+            <div  class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
                 <p1>Password</p1>
                 <input type="password" id="input" name="password" class="form-control" value="<?php echo $password; ?>">
                 <span class="help-block"><?php echo $password_err; ?></span>
             </div>
-            <div class="form-group <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
+            <div  class="form-group <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
                 <p1>Confirm Password</p1>
                 <input type="password" id="input" name="confirm_password" class="form-control" value="<?php echo $confirm_password; ?>">
-                <span class="help-block"><?php echo $confirm_password_err; ?></span>
+                <span  class="help-block"><?php echo $confirm_password_err; ?></span>
             </div>
             <div class="form-group" id = "center_buttons">
                 <input type="submit" class="btn" value="Register">
                 <input type="reset" class="btn" value="Clear" id="clear">
             </div>
             <p>Already have an account? <a href="login.php">Login here</a>.</p>
-            <p><a href="LandingPage.html">Go back</a></p>
+            <p><a href="index.html">Go back</a></p>
 </div>
         </form>
 

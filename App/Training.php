@@ -2,14 +2,16 @@
 // Initialize the session
 session_start();
 
-// Check if the user is logged in, if not then redirect him to login page
+// Check if the user is logged in, if not then redirect them to login page
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
   header("location: login.php");
   exit;
 }
+$employee_fname = $_SESSION["fname"];
+$employee_lname = $_SESSION["lname"];
 ?>
-<!DOCTYPE html>
 
+<!DOCTYPE html>
 <head>
   <meta charset="utf-8">
   <title>Training</title>
@@ -22,15 +24,17 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
       <div class="grid-container">
          <div class="item1">
            <div class="header">
-                <h1><b>iCanPrep</b> Chefs E-Training with Preparation List</h1>
+                <h3><b>iCanPrep</b> Chefs E-Training with Preparation List</h3>
+                <p id="greeting">Welcome, <b><?php echo htmlspecialchars($employee_fname); ?> <?php echo htmlspecialchars($employee_lname); ?></b></p>
+
            </div>
          </div>
          <div class="item2">
            <nav class="navbar">
-                <a href="Components.php">Components</a>
-                <a href="Preplist.php">Preparation List</a>
-                <b><a href="Training.php" id = "selected">Training</a></b>
-                <a href="Account.php">Account</a>
+                <a href="components.php">Components</a>
+                <a href="preparationlist.php">Preparation List</a>
+                <b><a href="training.php" id = "selected">Training</a></b>
+                <a href="account.php">Account</a>
                 <a href="logout.php" id= "bb">Log out</a>
          </nav>
         </div>

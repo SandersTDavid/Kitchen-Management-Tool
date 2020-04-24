@@ -1,13 +1,7 @@
 
 <?php
-// Initialize the session
-session_start();
+
 require_once "config.php";
-// Check if the user is logged in, if not then redirect him to login page
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-  header("location: login.php");
-  exit;
-}
 
 ?>
 
@@ -21,8 +15,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
   <link  rel='stylesheet' href='CSS/prep.css' type='text/css'>
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
   <script type="text/javascript" src="JS/script.js"></script>
-
-
 </head>
 
 <body>
@@ -37,8 +29,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
          <div class="item2">
            <nav class="navbar">
-                <a href="Components.php">Components</a>
-                <b><a href="Preplist.php" id = "selected">Preparation List</a></b>
+                <a href="components.php">Components</a>
+                <b><a href="preparationlist.php" id = "selected">Preparation List</a></b>
                 <a href="Training.php">Training</a>
                 <a href="Account.php">Account</a>
                 <a href="logout.php" id= "bb">Log out</a>
@@ -67,6 +59,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                </tr>
                  <div id="addRow"></div>
             </table>
+            <br>
+            <br>
+            <button onclick="window.location.href='preparationlist.php'" id ="reset">Reset List</button>
          </div>
        </div>
 
@@ -74,12 +69,12 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
          <div class="fifth">
            <h3>Search Components</h3>
             <div class="adder">
-             <input type="text" id="search" class="input" autofocus autocomplete="off" placeholder="Add items in your list.." onkeyup="success()">
+             <input type="text" id="search" name="textField" class="input" autofocus autocomplete="off" placeholder="Add items in your list..">
              <div id="display"></div>
-             <span id='btn' class="add" onclick="clearText()">+</span>
+             <button type="submit" id='btn' class="add" disabled="disabled">+</button>
              <input type"text" class="input2" id="search2" autocomplete="off" disabled>
              <div id="display2"></div>
-             <input type"text" class="input3" id="search3" autocomplete="off" disabled>
+             <input type"text" class="input3" value="0.2932" id="search3" autocomplete="off" disabled>
              <div id="display3"></div>
            </div>
          </div>
@@ -111,9 +106,22 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 </body>
 
 <footer>
+  <script>
+  $(document).ready(function() {
+    $('#btn').prop('disabled', true);
+
+    function validateNextButton() {
+      var buttonDisabled = $('#search').val().trim() === '' || $('#search3').val().trim() === '';
+      $('#btn').prop('disabled', buttonDisabled);
+    }
+
+    $('#search').on('keyup', validateNextButton);
+    $('#search3').on('input', validateNextButton);
+  });
+</script>
   <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
   <script type="text/javascript" src="JS/pageup.js"></script>
-  <script type="text/javascript" src="JS/Preplist.js"></script>
+  <script type="text/javascript" src="JS/preplist.js"></script>
 </footer>
 
 </html>

@@ -1,13 +1,5 @@
 
 <?php
-// Initialize the session
-session_start();
-
-// Check if the user is logged in, if not then redirect to login page
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-    header("location: login.php");
-    exit;
-}
 // Include config file
 require_once "config.php";
 
@@ -48,8 +40,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
                 // Password updated successfully. Destroy the session, and redirect to login page
-                session_destroy();
-                header("location: Account.php");
+                header("location: account.php");
                 exit();
             } else{
                 echo "Oops! Something went wrong. Please try again later.";
@@ -64,7 +55,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 ?>
 
 <!DOCTYPE html>
-
 <head>
   <meta charset="utf-8">
   <title>Account</title>
@@ -83,10 +73,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
   <div class="item2">
     <nav class="navbar">
-      <a href="Components.php">Components</a>
-      <a href="Preplist.php">Preparation List</a>
-      <a href="Training.php">Training</a>
-      <b><a href="Account.php" id = "selected">Account</a></b>
+      <a href="components.php">Components</a>
+      <a href="preparationlist.php">Preparation List</a>
+      <a href="training.php">Training</a>
+      <b><a href="account.php" id = "selected">Account</a></b>
       <a href="logout.php" id= "bb">Log out</a>
      </nav>
     </div>
@@ -105,12 +95,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
         <div class="form-group <?php echo (!empty($new_password_err)) ? 'has-error' : ''; ?>">
          <p>New Password</p>
-         <input type="password" name="new_password" class="form-control" value="<?php echo $new_password; ?>">
+         <input disabled id="input" type="password" name="new_password" class="form-control" value="<?php echo $new_password; ?>">
          <span class="help-block"><?php echo $new_password_err; ?></span>
         </div>
          <div class="form-group <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
           <p>Confirm Password</p>
-          <input type="password" name="confirm_password" class="form-control">
+          <input disabled id="input" type="password" name="confirm_password" class="form-control">
           <span class="help-block"><?php echo $confirm_password_err; ?></span>
          </div>
          <br>

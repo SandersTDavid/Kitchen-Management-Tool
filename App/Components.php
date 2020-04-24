@@ -1,13 +1,7 @@
 
 <?php
-// Initialize the session
-session_start();
+
 require_once "config.php";
-// Check if the user is logged in, if not then redirect him to login page
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-  header("location: login.php");
-  exit;
-}
 
 $food_name = $food_time = $food_category = $row = "";
 $fname_err = $ftime_err = $fcategory_err = $result = "";
@@ -40,7 +34,7 @@ if(empty(trim($_POST["food_name"]))){
           echo "Oops! Something went wrong. Please refresh page.";
       }
       if(empty(trim($_POST["food_time"]))){
-          $ftime_err = "Please enter a time in hours and minutes.";
+          $ftime_err = "Please enter a time in minutes.";
       } elseif(strlen(trim($_POST["food_time"])) > 5){
           $ftime_err = "Please enter a suitable time less than 60 hours";
       } else{
@@ -111,10 +105,10 @@ if(empty(trim($_POST["food_name"]))){
 
       <div class="item2">
        <nav class="navbar">
-         <b><a href="Components.php" id = "selected">Components</a></b>
-         <a href="Preplist.php">Preparation List</a>
-         <a href="Training.php">Training</a>
-         <a href="Account.php">Account</a>
+         <b><a href="components.php" id = "selected">Components</a></b>
+         <a href="preparationlist.php">Preparation List</a>
+         <a href="training.php">Training</a>
+         <a href="account.php">Account</a>
          <a href="logout.php" id= "bb">Log out</a>
         </nav>
        </div>
@@ -201,8 +195,13 @@ if(empty(trim($_POST["food_name"]))){
                    echo "<tr><td>" . $fname_err . "</td><td>" . $fcategory_err ."</td><td>" . $ftime_err . "</td></td>";
                 }
              ?>
-         </tbody>
-        </table>
+        </tbody>
+       </table>
+       <div class="moveDeletebtn">
+        <form action="DeleteSqlTable.php" method="post">
+              <input type="submit" name="delete" class="delete" id="delete" value="Delete List"></input>
+        </form>
+      </div>
        </div>
       </div>
 
