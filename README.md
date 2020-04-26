@@ -25,7 +25,9 @@ Alternatively use these instructions:
 4.1 Point the shell to the database, type: use kmt;
 
 4.2 Create tables in the database, Copy and Paste db.sql 
+
 4.2.1 Check that it exists, type: show tables; and type: select * from tableName
+
 4.2.2 Find the database on http://localhost/phpmyadmin/ in browser
 
 5. Find xammp/htdocs file. Copy and paste App file from Github into this folder
