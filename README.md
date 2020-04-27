@@ -1,6 +1,7 @@
 # Kitchen Management Tool
 Dissertation project: 
-Kitchen Management Tool using E-training for a preparation list
+Kitchen Management Tool
+E-training – Web application to help with the initial stages of training a chef 
 
 To view the website application please visit https://icanprep.com/ 
 Requirements: Up to date Chrome browser and screen size of 10" or more.
