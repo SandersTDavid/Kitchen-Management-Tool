@@ -30,7 +30,7 @@ Alternatively use these instructions:
 
 4.1. Point the shell to the database, type: use kmt;
 
-4.2. Create tables in the database, Copy and Paste db.sql 
+4.2. Create tables in the database, Copy and Paste tables from db.sql 
 
 4.2.1. Check that it exists, type: show tables; and type: select * from tableName
 
