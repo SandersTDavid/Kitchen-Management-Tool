@@ -12,7 +12,7 @@ CREATE TABLE food (
   food_name VARCHAR(100) NOT NULL,
   food_category VARCHAR(50) NOT NULL,
   food_time datetime(4) NOT NULL,
-  created_at INT(11) DEFAULT CURRENT_TIMESTAMP
+  employee_id INT(11) NOT NULL,
 );
 
 GRANT ALL PRIVILEGES ON mydb.* TO 'root'@'localhost' IDENTIFIED BY 'root';
