@@ -11,9 +11,9 @@ Alternatively use these instructions:
 
 1. Download source code from Github
 
-2. Download xammp at https://www.apachefriends.org/index.html to set up a server 
+2. Download Xammp at https://www.apachefriends.org/index.html to set up a server 
 
-3. Go to control pannel and click start my SQL and start Apache and Create database using the shell
+3. Go to Xammp control pannel and click start my SQL and start Apache and Create database using the shell
 
 3.5. To create the database type in cd c:\xampp\mysql\bin , make sure this is the right path in the right drive
 
