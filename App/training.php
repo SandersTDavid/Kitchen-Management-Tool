@@ -9,6 +9,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 }
 $employee_fname = $_SESSION["fname"];
 $employee_lname = $_SESSION["lname"];
+
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +17,9 @@ $employee_lname = $_SESSION["lname"];
   <meta charset="utf-8">
   <title>Training</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-  <link  rel='stylesheet' href='CSS/Training.css' type='text/css'>
+  <link  rel='stylesheet' href='CSS/training.css' type='text/css'>
+    <link  rel='stylesheet' href='CSS/menu.css' type='text/css'>
+     <link rel="icon" href="media/favicon/favicon.ico" sizes="16x16" type="image/png">
 </head>
 
 <body>
@@ -24,7 +27,7 @@ $employee_lname = $_SESSION["lname"];
       <div class="grid-container">
          <div class="item1">
            <div class="header">
-                <h3><b>iCanPrep</b> Chefs E-Training with Preparation List</h3>
+                <h3>Chefs E-Training</h3>
                 <p id="greeting">Welcome, <b><?php echo htmlspecialchars($employee_fname); ?> <?php echo htmlspecialchars($employee_lname); ?></b></p>
 
            </div>

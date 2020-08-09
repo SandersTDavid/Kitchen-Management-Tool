@@ -35,22 +35,6 @@ p1 {
 }
 
 .fourth {
-  padding: 15px;
-  text-align: center;
-  background: white;
-  font-size: 10px;
-  height: auto;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  border-radius: 40px;
-  margin-left: 20px;
-  margin-right: 200px;
-  width: auto;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 10), 0 6px 20px 0 rgba(0, 0, 0, 18);
-
-}
-
-.fifth {
   padding: 5px;
   text-align: center;
   background: grey;
@@ -64,7 +48,22 @@ p1 {
   height: auto;
   padding: 12px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 10), 0 6px 20px 0 rgba(0, 0, 0, 18);
+}
 
+.fifth {
+  padding: 15px;
+  text-align: center;
+  background: white;
+  font-size: 10px;
+  height: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 40px;
+  margin-left: 20px;
+  margin-right: 200px;
+  width: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 10), 0 6px 20px 0 rgba(0, 0, 0, 18);
+  width: 500px;
 }
 
 .sixth {
@@ -79,44 +78,6 @@ p1 {
   background-color: orange;
   box-shadow: 0 0 10px rgba(0.5, 0.5, 0.5, 0.5);
   transition: 0.35s;
-}
-
-
-
-#selected {
-  background-color: black;
-}
-
-.navbar  {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-  opacity: 0.95;
-  font-size: 15px;
-  margin-left: 35%;
-  box-shadow: 0 0 10px rgba(0.5, 0.5, 0.5, 0.3);
-}
-
-.navbar a {
-  float: left;
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-family: 'Open Sans',sans-serif;
-}
-
-#bb {
-  display: block;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  float: right;
-  background-color: #1f1f1f;
-  cursor: pointer;
 }
 
 .item1 {
@@ -135,14 +96,15 @@ p1 {
 }
 
 .item4 {
+  grid-area: right;
+}
+
+.item5 {
   grid-area: main;
   height: auto;
   width: auto;
 }
 
-.item5 {
-  grid-area: right;
-}
 
 .item6 {
   grid-area: footer;

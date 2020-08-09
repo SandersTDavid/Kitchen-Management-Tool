@@ -98,6 +98,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <meta charset="UTF-8">
     <title>Login</title>
     <link href='CSS/Login.css' rel='stylesheet' type='text/css'>
+    <link  rel='stylesheet' href='CSS/menu.css' type='text/css'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 </head>
 
@@ -106,7 +107,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <div class="grid-container">
            <div class="item1">
              <div class="header">
-                  <h1><b>iCanPrep</b> Chefs E-Training with Preparation List</h1>
+                  <h1>Chefs E-Training</h1>
              </div>
            </div>
 

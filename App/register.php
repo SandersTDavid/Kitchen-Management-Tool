@@ -1,4 +1,14 @@
 <?php
+// Initialize the session
+session_start();
+
+// Check if the user is logged in, if not then redirect them to login page
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+  header("location: login.php");
+  exit;
+}
+?>
+<?php
 // Include config file
 require_once "config.php";
 
@@ -100,78 +110,80 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Register</title>
-    <link href='CSS/register.css' rel='stylesheet' type='text/css'>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+ <meta charset="UTF-8">
+ <title>Register</title>
+ <link href='CSS/register.css' rel='stylesheet' type='text/css'>
+ <link  rel='stylesheet' href='CSS/menu.css' type='text/css'>
+ <link rel="icon" href="media/favicon/favicon.ico" sizes="16x16" type="image/png">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 </head>
 <body>
-  <div class = "wrapper">
-        <div class="grid-container">
-           <div class="item1">
-             <div class="header">
-                 <h1><b>iCanPrep</b> Chefs E-Training with Preparation List</h1>
-             </div>
-           </div>
+ <div class = "wrapper">
+ <div class="grid-container">
 
-         <div class="item2">
-           <nav class="navbar">
-                <a href="login.php">Login</a>
-             <b><a href="register.php" id = "selected">Register</a></b>
-                <a href="index.html">Home</a>
-         </nav>
-        </div>
-
-        <div class="item3">
-      <div class = 'BlackBox' id ="centre_BlackBox">
-<div class ="container">
-<div class = "A" id = "picture">
-          <img src="Media/Logo.jpg" width="350" height="350" class = "img-center">
+<div class="item1">
+ <div class="header">
+ <h1>Chefs E-Training</h1>
+ </div>
 </div>
 
-        <h2>Sign Up</h2>
-        <p>Please fill in this form to create an account.</p>
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-<div class = 'B'>
-          <div class="form-group">
-              <p1>First Name</p1>
-              <input type="text" id="input" name="fname" class="form-control" value="<?php echo $fname; ?>">
-          </div>
-          <div class="form-group">
-              <p1>Last Name</p1>
-              <input type="text" id="input" name="lname" class="form-control" value="<?php echo $lname; ?>">
-          </div>
-            <div   class="form-group <?php echo (!empty($email_err)) ? 'has-error' : ''; ?>">
-                <p1>Email</p1>
-                <input type="text" id="input" name="email" class="form-control" value="<?php echo $email; ?>">
-                <span class="help-block"><?php echo $email_err; ?></span>
-            </div>
-</div>
-<div class="C">
+<div class="item2">
+ <nav class="navbar">
+ <a href="login.php">Login</a>
+ <b><a href="register.php" id = "selected">Register</a></b>
+ <a href="index.html">Home</a>
+ </nav>
+ </div>
 
-            <div  class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
-                <p1>Password</p1>
-                <input type="password" id="input" name="password" class="form-control" value="<?php echo $password; ?>">
-                <span class="help-block"><?php echo $password_err; ?></span>
-            </div>
-            <div  class="form-group <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
-                <p1>Confirm Password</p1>
-                <input type="password" id="input" name="confirm_password" class="form-control" value="<?php echo $confirm_password; ?>">
-                <span  class="help-block"><?php echo $confirm_password_err; ?></span>
-            </div>
-            <div class="form-group" id = "center_buttons">
-                <input type="submit" class="btn" value="Register">
-                <input type="reset" class="btn" value="Clear" id="clear">
-            </div>
-            <p>Already have an account? <a href="login.php">Login here</a>.</p>
-            <p><a href="index.html">Go back</a></p>
-</div>
-        </form>
+<div class="item3">
+ <div class = 'BlackBox' id ="centre_BlackBox">
+ <div class ="container">
+ <div class = "A" id = "picture">
+ <img src="Media/Logo.jpg" width="350" height="350" class = "img-center">
+ </div>
+ <h2>Sign Up</h2>
+ <p>Please fill in this form to create an account.</p>
+ <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
 
-</div>
-    </div>
+ <div class = 'B'>
+ <div class="form-group">
+ <p1>First Name</p1>
+ <input disabled type="text" id="input" name="fname" class="form-control" value="<?php echo $fname; ?>">
+ </div>
+ <div class="form-group">
+ <p1>Last Name</p1>
+ <input disabled type="text" id="input" name="lname" class="form-control" value="<?php echo $lname; ?>">
+ </div>
+ <div class="form-group <?php echo (!empty($email_err)) ? 'has-error' : ''; ?>">
+ <p1>Email</p1>
+ <input disabled type="text" id="input" name="email" class="form-control" value="<?php echo $email; ?>">
+ <span class="help-block"><?php echo $email_err; ?></span>
+ </div>
+ </div>
 
-  </div>
+ <div class="C">
+ <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
+ <p1>Password</p1>
+ <input disabled type="password" id="input" name="password" class="form-control" value="<?php echo $password; ?>">
+ <span class="help-block"><?php echo $password_err; ?></span>
+ </div>
+ <div class="form-group <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
+ <p1>Confirm Password</p1>
+ <input disabled type="password" id="input" name="confirm_password" class="form-control" value="<?php echo $confirm_password; ?>">
+ <span class="help-block"><?php echo $confirm_password_err; ?></span>
+ </div>
+ <div class="form-group" id = "center_buttons">
+ <input disabled type="submit" class="btn" value="Register">
+ <input disabled type="reset" class="btn" value="Clear" id="clear">
+ </div>
+ <p>Already have an account? <a href="login.php">Login here</a>.</p>
+ <p><a href="index.html">Go back</a></p>
+ </div>
+ </form>
+ </div>
+ </div>
+</div>
+
 </div>
 </div>
 </body>

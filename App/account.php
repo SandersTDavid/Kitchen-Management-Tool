@@ -1,4 +1,13 @@
+<?php
+// Initialize the session
+session_start();
 
+// Check if the user is logged in, if not then redirect them to login page
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+  header("location: login.php");
+  exit;
+}
+?>
 <?php
 // Include config file
 require_once "config.php";
@@ -60,6 +69,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   <title>Account</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
   <link  rel='stylesheet' href='CSS/Account.css' type='text/css'>
+  <link  rel='stylesheet' href='CSS/menu.css' type='text/css'>
+  <link rel="icon" href="media/favicon/favicon.ico" sizes="16x16" type="image/png">
 </head>
 
 <body>
@@ -67,7 +78,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   <div class="grid-container">
    <div class="item1">
     <div class="header">
-     <h1><b>iCanPrep</b> Chefs E-Training with Preparation List</h1>
+     <h1>Chefs E-Training</h1>
     </div>
    </div>
 

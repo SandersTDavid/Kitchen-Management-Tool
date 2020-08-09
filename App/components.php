@@ -1,6 +1,14 @@
-
 <?php
+// Initialize the session
+session_start();
 
+// Check if the user is logged in, if not then redirect them to login page
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+  header("location: login.php");
+  exit;
+}
+?>
+<?php
 require_once "config.php";
 
 $food_name = $food_time = $food_category = $row = "";
@@ -90,148 +98,148 @@ if(empty(trim($_POST["food_name"]))){
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
   <link  rel='stylesheet' href='CSS/component.css' type='text/css'>
+  <link  rel='stylesheet' href='CSS/menu.css' type='text/css'>
+  <link rel="icon" href="media/favicon/favicon.ico" sizes="16x16" type="image/png">
   <script type="text/javascript" src="JS/componentScript.js"></script>
 </head>
 
 <body>
- <div class = "wrapper">
-  <div class="grid-container">
+<div class = "wrapper">
+<div class="grid-container">
 
-     <div class="item1">
-      <div class="header">
-          <h1><b>iCanPrep</b> Chefs E-Training with Preparation List</h1>
-      </div>
-     </div>
-
-      <div class="item2">
-       <nav class="navbar">
-         <b><a href="components.php" id = "selected">Components</a></b>
-         <a href="preparationlist.php">Preparation List</a>
-         <a href="training.php">Training</a>
-         <a href="account.php">Account</a>
-         <a href="logout.php" id= "bb">Log out</a>
-        </nav>
-       </div>
-
-       <div class="item3">
-        <div class="third">
-          <h2>Add Component</h2>
-           <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-            <div ="container">
-             <div class="A">
-               <div class="componentBox">
-                 <p1>Component Name</p1>
-                  </br>
-                   <input type="text" name="food_name" id="textbox" name="textbox" value="<?php echo $food_name; ?>">
-                   <br>
-                    <span class="help-block"><?php echo $fname_err; ?></span>
-               </div>
-              </div>
-
-         <div class="B">
-          <div class="selectoption">
-           <p> </p>
-            <p1>Component Category</p1>
-              <div class="setRadio">
-               <input type="radio" id="radioCook"name="food_category"
-                 <?php if(isset($food_category))  echo "checked"; ?>
-                   value="Cook" label="COOK"><label for="radioCook">COOK</label>
-               <input type="radio" id="radioPrepare" name="food_category"
-                     <?php if(isset($food_category)) echo "checked"; ?>
-                      value="Prepare" label= "PREPARE"><label for="radioPrepare">PREPARE</label>
-               <input type="radio" id="radioOther" name="food_category"
-                      <?php if(isset($food_category)) echo "checked"; ?>
-                       value="Other"><label for="radioOther">OTHER</label>
-              </div>
-             </div>
-            </div>
-           </br>
-
-        <div class ="C">
-          <div class="componentBox <?php echo (!empty($fcategory_err)) ? 'has-error' : ''; ?>">
-           </br>
-            <p1>Component Time (Mins)</p1>
-             </br>
-              <input type="number" name="food_time" id="textbox" min="1" value="<?php echo $food_time; ?>">
-              <br>
-               <span class="help-block"><?php echo $ftime_err; ?></span>
-          </div>
-         </div>
-
-        <div class="D">
-         <div class="form-group" id = "center_buttons">
-          <input type="submit" class="btn" value="Add">
-         </div>
-        </div>
-      </div>
-    </form>
-
-  </div>
+<div class="item1">
+ <div class="header">
+ <h1>Chefs E-Training</h1>
+ </div>
 </div>
 
-         <div class="item4">
-           <div class="fourth">
-             <h2>Component Record</h2>
-            <table>
-             <thead>
-               <tr>
-                   <th>Component</th>
-                   <th>Category</th>
-                   <th>Time</th>
-                   <th></th>
-              </tr>
-             </thead>
-            <tbody>
-              <?php
-                   $sql = "SELECT * FROM food ORDER BY food_name asc";
-                   $result = $link->query($sql);
-               if ($result->num_rows > 0) {
-                   while($row = $result->fetch_assoc()) {
-                   echo "<tr ><td>" . $row["food_name"] . "</td><td>" . $row["food_category"] . "</td><td>" . $row["food_time"]."</td>" ;
-                   echo "<td>". "<a href='DeleteSqlRow.php?id=" . $row["food_id"] . "'>Delete</a>" . "</td>";
-                   echo "</tr>";
-                   }
-                }
-              else {
-                   echo "<tr><td>" . $fname_err . "</td><td>" . $fcategory_err ."</td><td>" . $ftime_err . "</td></td>";
-                }
-             ?>
-        </tbody>
-       </table>
-       <div class="moveDeletebtn">
-        <form action="DeleteSqlTable.php" method="post">
-              <input type="submit" name="delete" class="delete" id="delete" value="Delete List"></input>
-        </form>
-      </div>
-       </div>
-      </div>
+<div class="item2">
+ <nav class="navbar">
+ <b><a href="components.php" id = "selected">Components</a></b>
+ <a href="preparationlist.php">Preparation List</a>
+ <a href="training.php">Training</a>
+ <a href="account.php">Account</a>
+ <a href="logout.php" id= "bb">Log out</a>
+ </nav>
+</div>
 
-    <div class="item5">
-     <div class="fifth">
-      <h1>Phase One</h1>
-       <p1>
-          Add every single item that has to be prepared on the section.
-        <br> It is important to add the time of the component in minutes, don't forget that the time is from start to finish and not just how long it takes in the oven.
-       </p1>
-      </div>
-     </div>
+<div class="item3">
+ <div class="third">
+ <h2>Add Component</h2>
+ <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+ <div ="container">
+ <div class="A">
+ <div class="componentBox">
+ <p1>Component Name</p1>
+ </br>
+ <input type="text" name="food_name" id="textbox" name="textbox" value="<?php echo $food_name; ?>">
+ <br>
+ <span class="help-block"><?php echo $fname_err; ?></span>
+ </div>
+</div>
 
-    <div class="item6">
-     <div class="sixth">
-      <h1>Training advice</h1>
-       <p1>
-          It is key to know of every single item to build a picture of what needs to be prepared and maintained on a daily basis. If one such item is missing from the section
-            the service will have to wait for it causing the customer to wait for their meal, or even worse, to be taken off the menu.
-          </section>
-       </p1>
-      </div>
-     </div>
+<div class="B">
+ <div class="selectoption">
+ <p> </p>
+ <p1>Component Category</p1>
+ <div class="setRadio">
+ <input type="radio" id="radioCook"name="food_category"
+ <?php if(isset($food_category))  echo "checked"; ?>
+ value="Cook" label="COOK"><label for="radioCook">COOK</label>
+ <input type="radio" id="radioPrepare" name="food_category"
+ <?php if(isset($food_category)) echo "checked"; ?>
+ value="Prepare" label= "PREPARE"><label for="radioPrepare">PREPARE</label>
+ <input type="radio" id="radioOther" name="food_category"
+ <?php if(isset($food_category)) echo "checked"; ?>
+ value="Other"><label for="radioOther">OTHER</label>
+ </div>
+ </div>
+</div>
+ </br>
 
-        <div class="logo">
-          <img src="Media/Logo.jpg" alt="Chef hat">
-        </div>
-     </div>
-   </div>
+<div class ="C">
+ <div class="componentBox <?php echo (!empty($fcategory_err)) ? 'has-error' : ''; ?>">
+ </br>
+ <p1>Component Time (Mins)</p1>
+ </br>
+ <input type="number" name="food_time" id="textbox" min="1" value="<?php echo $food_time; ?>">
+ <br>
+ <span class="help-block"><?php echo $ftime_err; ?></span>
+ </div>
+</div>
+
+<div class="D">
+ <div class="form-group" id = "center_buttons">
+ <input type="submit" class="btn" value="Add">
+ </div>
+ </div>
+</div>
+</form>
+</div>
+</div>
+
+<div class="item4">
+ <div class="fourth">
+ <h2>Component Record</h2>
+ <table>
+ <thead>
+ <tr>
+ <th>Component</th>
+ <th>Category</th>
+ <th>Time</th>
+ <th></th>
+ </tr>
+ </thead>
+ <tbody>
+ <?php
+ $sql = "SELECT * FROM food ORDER BY food_name asc";
+ $result = $link->query($sql);
+ if ($result->num_rows > 0) {
+ while($row = $result->fetch_assoc()) {
+ echo "<tr ><td>" . $row["food_name"] . "</td><td>" . $row["food_category"] . "</td><td>" . $row["food_time"]."</td>" ;
+ echo "<td>". "<a href='DeleteSqlRow.php?id=" . $row["food_id"] . "'>Delete</a>" . "</td>";
+ echo "</tr>";
+  }
+}
+else {
+echo "<tr><td>" . $fname_err . "</td><td>" . $fcategory_err ."</td><td>" . $ftime_err . "</td></td>";
+}
+?>
+</tbody>
+</table>
+
+<div class="moveDeletebtn">
+ <form action="DeleteSqlTable.php" method="post">
+ <input type="submit" name="delete" class="delete" id="delete" value="Delete List"></input>
+ </form>
+</div>
+</div>
+</div>
+
+<div class="item5">
+ <div class="fifth">
+ <h1>Phase One</h1>
+ <p1>Add every single item that has to be prepared on the section.
+ <br> It is important to add the time of the component in minutes, don't forget that the time is from start to finish and not just how long it takes in the oven.
+ </p1>
+ </div>
+</div>
+
+<div class="item6">
+ <div class="sixth">
+ <h1>Training advice</h1>
+ <p1>It is key to know of every single item to build a picture of what needs to be prepared and maintained on a daily basis. If one such item is missing from the section
+  the service will have to wait for it causing the customer to wait for their meal, or even worse, to be taken off the menu.
+ </section>
+ </p1>
+ </div>
+</div>
+
+<div class="logo">
+ <img src="Media/Logo.jpg" alt="Chef hat">
+ </div>
+</div>
+</div>
 </body>
 
 <footer>

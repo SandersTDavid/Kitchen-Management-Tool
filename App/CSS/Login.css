@@ -61,36 +61,6 @@ p2 {
   bottom: 0;
 }
 
-
-.navbar a:hover {
-  background-color: orange;
-  box-shadow: 0 0 10px rgba(0.5, 0.5, 0.5, 0.5);
-  transition: 0.35s;
-}
-#selected {
-  background-color: black;
-}
-.navbar  {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-  opacity: 0.95;
-  font-size: 15px;
-  margin-left: 40%;
-  box-shadow: 0 0 10px rgba(0.5, 0.5, 0.5, 0.5);
-}
-.navbar a {
-  float: left;
-  display: inline-block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-family: 'Open Sans',sans-serif;
-}
-
 .img-center {
   border-radius: 22%;
   margin:auto;
