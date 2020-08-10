@@ -22,7 +22,7 @@
       cursor: grab;
       transition: all 200ms;
       user-select: none;
-      margin: 1px auto;
+      margin: 1px auto 0px 30px;
       position: relative;
       white-space: nowrap;
       font-size: 15px;

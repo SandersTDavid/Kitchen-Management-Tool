@@ -1,19 +1,18 @@
-
 <?php
 // Initialize the session
 session_start();
+
+// Check if the user is logged in, if not then redirect them to login page
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
   header("location: login.php");
   exit;
 }
 ?>
-<!-- Connect DB -->
 <?php
 require_once "config.php";
 ?>
 
 <!DOCTYPE html>
-
 <head>
  <title>Preparation list</title>
  <meta charset="utf-8">
@@ -42,8 +41,8 @@ require_once "config.php";
  <nav class="navbar">
  <a href="components.php">Components</a>
  <b><a href="preparationlist.php" id = "selected">Preparation List</a></b>
- <a href="Training.php">Training</a>
- <a href="Account.php">Account</a>
+ <a href="training.php">Training</a>
+ <a href="account.php">Account</a>
  <a href="logout.php" id= "bb">Log out</a>
  </nav>
 </div>
@@ -82,8 +81,6 @@ require_once "config.php";
  </table>
  </div>
  </div>
-
-
 
 <div class="item6">
  <div class="sixth">
