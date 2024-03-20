@@ -6,7 +6,7 @@ Kitchen Management Tool
 
 E-training – Web application to help with the initial stages of training a chef 
 
-To view the website application please visit https://icanprep.com/ 
+To view the website application please visit the provided link
 Requirements: Up to date Chrome browser and screen size of 10" or more.
 
 Alternatively use these instructions:
